@@ -11,53 +11,53 @@ echo       DISASTERVISION: PRE/POST-DISASTER BUILDING-DAMAGE CLASSIFIER
 echo                     One-Click Push to GitHub Remote                           
 echo ==============================================================================
 echo.
+echo Remote Repository:
+echo   https://github.com/ankitshandilya2518/Pre-Post-Disaster-Management-System
+echo.
 
-rem 1. Check if git remote exists
+rem 1. Verify remote is set
 git remote get-url origin >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [ACTION REQUIRED] No GitHub remote repository is currently linked.
-    echo.
-    echo Please enter your GitHub repository URL:
-    echo (e.g. https://github.com/your-username/CSE471-DisasterVision.git)
-    echo.
-    set /p REPO_URL="Repository URL: "
-    if "!REPO_URL!"=="" (
-        echo [ERROR] No URL entered. Aborting.
-        pause
-        exit /b 1
-    )
-    git remote add origin !REPO_URL!
-    echo [OK] Linked remote origin to: !REPO_URL!
-    echo.
+    git remote add origin https://github.com/ankitshandilya2518/Pre-Post-Disaster-Management-System.git
 )
 
-rem 2. Staging all files
-echo [*] Staging project changes...
+rem 2. Stage all modifications
+echo [*] Staging files (git add -A)...
 git add -A
 
-rem 3. Ask for commit message or default to timestamp
-set /p USER_MSG="Enter commit message (Press Enter for automatic timestamp): "
-if "!USER_MSG!"=="" (
-    set USER_MSG=Update: %date% %time%
+rem 3. Check for staged changes
+git diff --cached --quiet
+if %errorlevel% neq 0 (
+    echo [*] Changes detected.
+    echo.
+    set /p USER_MSG="Enter commit description (Press Enter for automatic timestamp): "
+    if "!USER_MSG!"=="" (
+        set USER_MSG=Update: %date% %time%
+    )
+    echo.
+    echo [*] Committing: "!USER_MSG!"...
+    git commit -m "!USER_MSG!"
+) else (
+    echo [*] No new uncommitted file changes detected.
 )
 
-echo [*] Committing: "!USER_MSG!"...
-git commit -m "!USER_MSG!"
-
-rem 4. Push to main
+rem 4. Push to GitHub
+echo.
 echo [*] Pushing to GitHub (origin main)...
-git push -u origin main
+git push origin main
 
 if %errorlevel% equ 0 (
     echo.
     echo ==============================================================================
-    echo [SUCCESS] Your project has been successfully pushed and updated on GitHub!
+    echo [SUCCESS] GitHub is now completely up to date!
+    echo Check your repository:
+    echo https://github.com/ankitshandilya2518/Pre-Post-Disaster-Management-System
     echo ==============================================================================
 ) else (
     echo.
     echo ==============================================================================
-    echo [NOTICE] If this is your first push, please complete GitHub sign-in in the 
-    echo          browser popup, or verify your repository permissions.
+    echo [NOTICE] Push encountered an issue. Please check your internet connection 
+    echo          or GitHub sign-in permissions.
     echo ==============================================================================
 )
 
