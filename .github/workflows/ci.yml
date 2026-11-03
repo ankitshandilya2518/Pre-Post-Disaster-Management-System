@@ -1,0 +1,45 @@
+name: DisasterVision CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Core Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Syntax and Bytecode Validation
+        run: |
+          python -m py_compile app.py train.py utils/*.py models/*.py data/*.py
+
+      - name: Run Siamese Model & Rectangular Block Verification
+        run: |
+          python -c "
+          from PIL import Image
+          from utils.sample_generator import generate_sample_crop_pair
+          from models.dual_branch_net import load_damage_classifier
+
+          model = load_damage_classifier()
+          for d in ['earthquake', 'flood', 'hurricane', 'wildfire']:
+              for s in [0, 1, 2, 3]:
+                  pre, post, _ = generate_sample_crop_pair(disaster_type=d, severity=s, crop_size=128)
+                  pred, conf, _, _ = model.predict(pre, post)
+                  assert pred in ['none', 'minor', 'major', 'destroyed']
+          print('Model and sample pipeline verified successfully.')
+          "

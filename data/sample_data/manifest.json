@@ -1,0 +1,1602 @@
+[
+  {
+    "uid": "earthquake_none_000",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_000_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_001",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_001_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_002",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_002_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_003",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_003_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_004",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_004_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_005",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_005_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_006",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_006_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_007",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_007_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_008",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_008_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_none_009",
+    "disaster": "earthquake",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\earthquake\\none\\earthquake_none_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\none\\earthquake_none_009_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_000",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_000_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_001",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_001_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_002",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_002_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_003",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_003_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_004",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_004_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_005",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_005_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_006",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_006_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_007",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_007_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_008",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_008_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_minor_009",
+    "disaster": "earthquake",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\minor\\earthquake_minor_009_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_000",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_000_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_001",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_001_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_002",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_002_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_003",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_003_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_004",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_004_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_005",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_005_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_006",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_006_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_007",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_007_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_008",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_008_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_major_009",
+    "disaster": "earthquake",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\earthquake\\major\\earthquake_major_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\major\\earthquake_major_009_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_000",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_000_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_001",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_001_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_002",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_002_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_003",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_003_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_004",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_004_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_005",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_005_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_006",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_006_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_007",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_007_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_008",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_008_post_disaster.png"
+  },
+  {
+    "uid": "earthquake_destroyed_009",
+    "disaster": "earthquake",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\earthquake\\destroyed\\earthquake_destroyed_009_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_000",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_000_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_001",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_001_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_002",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_002_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_003",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_003_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_004",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_004_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_005",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_005_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_006",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_006_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_007",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_007_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_008",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_008_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_none_009",
+    "disaster": "hurricane",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\hurricane\\none\\hurricane_none_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\none\\hurricane_none_009_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_000",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_000_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_001",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_001_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_002",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_002_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_003",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_003_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_004",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_004_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_005",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_005_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_006",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_006_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_007",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_007_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_008",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_008_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_minor_009",
+    "disaster": "hurricane",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\minor\\hurricane_minor_009_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_000",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_000_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_001",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_001_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_002",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_002_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_003",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_003_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_004",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_004_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_005",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_005_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_006",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_006_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_007",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_007_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_008",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_008_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_major_009",
+    "disaster": "hurricane",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\hurricane\\major\\hurricane_major_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\major\\hurricane_major_009_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_000",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_000_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_001",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_001_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_002",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_002_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_003",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_003_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_004",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_004_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_005",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_005_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_006",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_006_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_007",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_007_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_008",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_008_post_disaster.png"
+  },
+  {
+    "uid": "hurricane_destroyed_009",
+    "disaster": "hurricane",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\hurricane\\destroyed\\hurricane_destroyed_009_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_000",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_000_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_001",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_001_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_002",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_002_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_003",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_003_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_004",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_004_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_005",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_005_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_006",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_006_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_007",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_007_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_008",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_008_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_none_009",
+    "disaster": "wildfire",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\wildfire\\none\\wildfire_none_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\none\\wildfire_none_009_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_000",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_000_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_001",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_001_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_002",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_002_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_003",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_003_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_004",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_004_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_005",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_005_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_006",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_006_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_007",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_007_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_008",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_008_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_minor_009",
+    "disaster": "wildfire",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\minor\\wildfire_minor_009_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_000",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_000_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_001",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_001_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_002",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_002_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_003",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_003_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_004",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_004_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_005",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_005_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_006",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_006_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_007",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_007_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_008",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_008_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_major_009",
+    "disaster": "wildfire",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\wildfire\\major\\wildfire_major_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\major\\wildfire_major_009_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_000",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_000_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_001",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_001_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_002",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_002_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_003",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_003_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_004",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_004_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_005",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_005_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_006",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_006_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_007",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_007_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_008",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_008_post_disaster.png"
+  },
+  {
+    "uid": "wildfire_destroyed_009",
+    "disaster": "wildfire",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\wildfire\\destroyed\\wildfire_destroyed_009_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_000",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_000_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_001",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_001_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_002",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_002_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_003",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_003_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_004",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_004_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_005",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_005_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_006",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_006_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_007",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_007_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_008",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_008_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_none_009",
+    "disaster": "tsunami",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\tsunami\\none\\tsunami_none_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\none\\tsunami_none_009_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_000",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_000_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_001",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_001_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_002",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_002_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_003",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_003_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_004",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_004_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_005",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_005_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_006",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_006_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_007",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_007_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_008",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_008_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_minor_009",
+    "disaster": "tsunami",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\minor\\tsunami_minor_009_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_000",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_000_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_001",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_001_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_002",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_002_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_003",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_003_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_004",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_004_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_005",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_005_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_006",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_006_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_007",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_007_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_008",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_008_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_major_009",
+    "disaster": "tsunami",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\tsunami\\major\\tsunami_major_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\major\\tsunami_major_009_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_000",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_000_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_001",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_001_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_002",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_002_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_003",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_003_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_004",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_004_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_005",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_005_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_006",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_006_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_007",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_007_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_008",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_008_post_disaster.png"
+  },
+  {
+    "uid": "tsunami_destroyed_009",
+    "disaster": "tsunami",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\tsunami\\destroyed\\tsunami_destroyed_009_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_000",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_000_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_001",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_001_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_002",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_002_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_003",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_003_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_004",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_004_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_005",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_005_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_006",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_006_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_007",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_007_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_008",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_008_post_disaster.png"
+  },
+  {
+    "uid": "flood_none_009",
+    "disaster": "flood",
+    "severity": 0,
+    "damage_class": "none",
+    "pre_path": "data\\sample_data\\flood\\none\\flood_none_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\none\\flood_none_009_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_000",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_000_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_001",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_001_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_002",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_002_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_003",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_003_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_004",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_004_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_005",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_005_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_006",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_006_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_007",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_007_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_008",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_008_post_disaster.png"
+  },
+  {
+    "uid": "flood_minor_009",
+    "disaster": "flood",
+    "severity": 1,
+    "damage_class": "minor",
+    "pre_path": "data\\sample_data\\flood\\minor\\flood_minor_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\minor\\flood_minor_009_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_000",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_000_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_001",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_001_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_002",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_002_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_003",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_003_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_004",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_004_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_005",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_005_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_006",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_006_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_007",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_007_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_008",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_008_post_disaster.png"
+  },
+  {
+    "uid": "flood_major_009",
+    "disaster": "flood",
+    "severity": 2,
+    "damage_class": "major",
+    "pre_path": "data\\sample_data\\flood\\major\\flood_major_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\major\\flood_major_009_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_000",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_000_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_000_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_001",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_001_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_001_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_002",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_002_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_002_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_003",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_003_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_003_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_004",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_004_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_004_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_005",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_005_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_005_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_006",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_006_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_006_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_007",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_007_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_007_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_008",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_008_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_008_post_disaster.png"
+  },
+  {
+    "uid": "flood_destroyed_009",
+    "disaster": "flood",
+    "severity": 3,
+    "damage_class": "destroyed",
+    "pre_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_009_pre_disaster.png",
+    "post_path": "data\\sample_data\\flood\\destroyed\\flood_destroyed_009_post_disaster.png"
+  }
+]

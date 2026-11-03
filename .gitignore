@@ -1,0 +1,22 @@
+# Python & Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Matplotlib & Streamlit Caches
+.matplotlib_cache/
+.streamlit/secrets.toml
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Scratch / Temporary Test Scripts
+scratch/
+*.tmp
+*.log
