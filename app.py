@@ -1,8 +1,8 @@
 """
-Pre/Post-Disaster Building-Damage Classifier & Safety Guide
-============================================================
-CSE471 Final Year Project | Computer Vision
-Dual-Branch Model for xBD Building Damage Severity Classification
+DisasterVision: Pre/Post-Disaster Building Safety & Damage Assessment System
+=============================================================================
+CSE471 Final Year Project | Computer Vision & Civil Protection System
+Dual-Branch Siamese Network for xBD Building Damage Severity Classification
 """
 
 from datetime import datetime, timezone
@@ -48,21 +48,22 @@ from utils.report_generator import (
 
 # Streamlit Page Config
 st.set_page_config(
-    page_title="Building Damage Classifier | CSE471",
-    page_icon="🏢",
+    page_title="DisasterVision • Building Safety & Damage Assessment",
+    page_icon="🏛️",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
 
-# Custom Styling with Bottom Row Navigation Cards & Rich Hover Effects
+# Custom Styling: Clean, Human-Centered, Trustworthy Design System
 st.markdown("""
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+    /* Global Typography & Reset */
     * {
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     .mono {
         font-family: 'JetBrains Mono', monospace !important;
@@ -80,53 +81,73 @@ st.markdown("""
     }
 
     .block-container {
-        padding-top: 1rem !important;
-        padding-bottom: 2rem !important;
+        padding-top: 1.2rem !important;
+        padding-bottom: 2.5rem !important;
         max-width: 1400px !important;
     }
 
-    /* Container styling */
+    /* Container styling: Soft, natural card surfaces */
     [data-testid="stVerticalBlockBorderWrapper"] {
-        border-radius: 14px !important;
-        border-color: rgba(255, 255, 255, 0.08) !important;
-        background: #0d1527 !important;
-        padding: 14px !important;
+        border-radius: 12px !important;
+        border: 1px solid #334155 !important;
+        background: #1e293b !important;
+        padding: 18px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
     }
 
-    /* Top Brand Header */
-    .app-header {
-        margin-bottom: 16px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    /* Top Brand Bar */
+    .brand-bar {
+        background: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 14px;
+        padding: 16px 22px;
+        margin-bottom: 18px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 14px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
-    .app-title {
-        font-size: 1.85rem;
+    .brand-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .brand-emblem {
+        width: 48px;
+        height: 48px;
+        background: #2563eb;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+    .brand-title {
+        font-size: 1.55rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #f43f5e 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #f8fafc;
+        letter-spacing: -0.3px;
         margin-bottom: 2px;
     }
-    .app-subtitle {
-        font-size: 0.88rem;
+    .brand-subtitle {
+        font-size: 0.85rem;
         color: #94a3b8;
+        font-weight: 500;
     }
-    .status-badge {
+    .brand-status {
         background: rgba(16, 185, 129, 0.12);
         border: 1px solid rgba(16, 185, 129, 0.3);
         color: #34d399;
-        font-size: 0.78rem;
-        font-weight: 700;
-        padding: 5px 14px;
-        border-radius: 20px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 7px 16px;
+        border-radius: 30px;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
     }
     .status-dot {
         width: 8px;
@@ -134,137 +155,153 @@ st.markdown("""
         background: #10b981;
         border-radius: 50%;
         display: inline-block;
-        box-shadow: 0 0 8px #10b981;
+        box-shadow: 0 0 6px #10b981;
     }
 
-    /* Inner Card */
-    .inner-card {
-        background: #020617;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
+    /* Top Navigation Tabs */
+    .top-nav-container {
+        margin-bottom: 22px;
+    }
+
+    /* Card Surfaces */
+    .human-card {
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 12px;
         padding: 20px;
         margin-bottom: 16px;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .inner-card:hover {
-        border-color: rgba(56, 189, 248, 0.35);
-        transform: translateY(-2px);
+    .human-card:hover {
+        border-color: #475569;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
     }
 
-    /* Satellite Image Docks */
-    .img-box {
-        background: #020617;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Image Display Docks */
+    .dock-wrapper {
+        background: #0f172a;
+        border: 1px solid #334155;
         border-radius: 12px;
         overflow: hidden;
-        padding: 10px;
+        padding: 12px;
         text-align: center;
-        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .img-box:hover {
-        transform: translateY(-4px);
-        border-color: #38bdf8;
-        box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+    .dock-wrapper:hover {
+        transform: translateY(-2px);
+        border-color: #3b82f6;
     }
-    .img-label {
-        font-size: 0.82rem;
+    .dock-header {
+        font-size: 0.8rem;
         font-weight: 700;
         color: #cbd5e1;
-        margin-bottom: 8px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        margin-bottom: 8px;
     }
 
-    /* Severity Badges */
-    .badge {
-        display: inline-block;
-        padding: 6px 18px;
-        border-radius: 20px;
-        font-size: 1rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+    /* Verdict Card */
+    .verdict-box {
+        background: #1e293b;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 16px;
+        margin-bottom: 18px;
+        border-left: 6px solid #3b82f6;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
-    .badge-none { background: #10b981; color: white; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4); }
-    .badge-minor { background: #f59e0b; color: white; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4); }
-    .badge-major { background: #ea580c; color: white; box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4); }
-    .badge-destroyed { background: #ef4444; color: white; box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4); }
+
+    /* Badges */
+    .badge-pill {
+        display: inline-block;
+        padding: 7px 20px;
+        border-radius: 24px;
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+    }
+    .badge-none { background: #059669; color: #ffffff; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); }
+    .badge-minor { background: #d97706; color: #ffffff; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3); }
+    .badge-major { background: #ea580c; color: #ffffff; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3); }
+    .badge-destroyed { background: #dc2626; color: #ffffff; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); }
 
     /* KPI Metrics */
-    .kpi {
-        background: #020617;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 14px;
+    .kpi-card {
+        background: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        padding: 14px 10px;
         text-align: center;
-        transition: transform 0.2s ease;
+        margin-bottom: 10px;
     }
-    .kpi:hover {
-        transform: translateY(-2px);
-    }
-    .kpi-title {
-        font-size: 0.76rem;
+    .kpi-lbl {
+        font-size: 0.74rem;
         color: #94a3b8;
+        font-weight: 600;
         text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.4px;
+        margin-bottom: 4px;
     }
-    .kpi-value {
-        font-size: 1.5rem;
+    .kpi-val {
+        font-size: 1.45rem;
         font-weight: 800;
         color: #f8fafc;
-        margin-top: 2px;
         font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Styling for the 3 Bottom Navigation Row Cards */
-    div[data-testid="stHorizontalBlock"] > div[data-testid="column"] > div.stButton > button {
-        width: 100% !important;
-        padding: 20px 22px !important;
-        border-radius: 16px !important;
-        font-size: 1.05rem !important;
-        font-weight: 700 !important;
-        line-height: 1.4 !important;
-        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        cursor: pointer !important;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3) !important;
-        min-height: 84px !important;
+    /* Human Action Directive Banners */
+    .action-banner {
+        border-radius: 10px;
+        padding: 14px 18px;
+        margin-top: 14px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+    .action-safe {
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.35);
+        color: #a7f3d0;
+    }
+    .action-warning {
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.35);
+        color: #fde68a;
+    }
+    .action-danger {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.35);
+        color: #fecaca;
     }
 
-    /* Inactive Bottom Card */
-    div[data-testid="stHorizontalBlock"] > div[data-testid="column"] > div.stButton > button[kind="secondary"] {
-        background: #0f172a !important;
-        color: #cbd5e1 !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-bottom: 4px solid rgba(255, 255, 255, 0.08) !important;
+    /* Clean Navigation Button Styling */
+    div.stButton > button {
+        border-radius: 10px !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+        padding: 12px 18px !important;
+        transition: all 0.2s ease !important;
     }
-
-    /* Hover State for Bottom Cards - Lifts Up with Glowing Border */
-    div[data-testid="stHorizontalBlock"] > div[data-testid="column"] > div.stButton > button[kind="secondary"]:hover {
-        transform: translateY(-8px) !important;
+    div.stButton > button[kind="primary"] {
+        background: #2563eb !important;
+        color: #ffffff !important;
+        border: 1px solid #3b82f6 !important;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+    }
+    div.stButton > button[kind="secondary"] {
         background: #1e293b !important;
-        border-color: #38bdf8 !important;
-        border-bottom: 4px solid #38bdf8 !important;
-        color: #ffffff !important;
-        box-shadow: 0 14px 32px rgba(56, 189, 248, 0.35) !important;
+        color: #cbd5e1 !important;
+        border: 1px solid #334155 !important;
     }
-
-    /* Active Bottom Card */
-    div[data-testid="stHorizontalBlock"] > div[data-testid="column"] > div.stButton > button[kind="primary"] {
-        background: linear-gradient(135deg, #1d4ed8, #2563eb) !important;
-        border: 1px solid #60a5fa !important;
-        border-bottom: 4px solid #93c5fd !important;
+    div.stButton > button[kind="secondary"]:hover {
+        background: #334155 !important;
         color: #ffffff !important;
-        box-shadow: 0 10px 28px rgba(37, 99, 235, 0.5) !important;
-        transform: translateY(-4px) !important;
-    }
-    div[data-testid="stHorizontalBlock"] > div[data-testid="column"] > div.stButton > button[kind="primary"]:hover {
-        transform: translateY(-8px) !important;
-        box-shadow: 0 16px 36px rgba(37, 99, 235, 0.65) !important;
+        border-color: #64748b !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -289,56 +326,95 @@ def ensure_sample_dataset():
 ensure_sample_dataset()
 model = load_model()
 
-# Session State for Bottom Navigation (Defaults to Damage Classifier)
+# Session State for Active Navigation
 if "active_nav" not in st.session_state:
     st.session_state["active_nav"] = "classifier"
 
-# Top Header
+# Top Brand Header
 st.markdown("""
-<div class="app-header">
-    <div>
-        <div class="app-title">🏢 DisasterVision: Building Damage Severity Classifier</div>
-        <div class="app-subtitle">CSE471 Final Year Project | Two-Branch Siamese Model for Pre/Post-Disaster Satellite Damage Assessment</div>
+<div class="brand-bar">
+    <div class="brand-left">
+        <div class="brand-emblem">🏛️</div>
+        <div>
+            <div class="brand-title">DisasterVision • Building Safety & Damage Assessment</div>
+            <div class="brand-subtitle">National Civil Defense & Emergency Response Infrastructure • Post-Disaster Structural Evaluation</div>
+        </div>
     </div>
-    <div class="status-badge">
+    <div class="brand-status">
         <span class="status-dot"></span>
-        MODEL ONLINE • 77.3% ACCURACY
+        Operational • NDMA Structural Triage Protocol Active
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 
 # ==============================================================================
-# MAIN CONTENT AREA
+# TOP NAVIGATION BAR (Accessible, Prominent, Human-Centered)
+# ==============================================================================
+top_n1, top_n2, top_n3, top_n4 = st.columns(4, gap="small")
+
+with top_n1:
+    is_t1 = (st.session_state["active_nav"] == "classifier")
+    btn1_t = "🏢  Damage Assessment Studio"
+    if st.button(btn1_t, key="top_nav_classifier", type="primary" if is_t1 else "secondary", use_container_width=True):
+        st.session_state["active_nav"] = "classifier"
+        st.rerun()
+
+with top_n2:
+    is_t2 = (st.session_state["active_nav"] == "realtime")
+    btn2_t = "🛰️  India Disaster Live Monitor"
+    if st.button(btn2_t, key="top_nav_realtime", type="primary" if is_t2 else "secondary", use_container_width=True):
+        st.session_state["active_nav"] = "realtime"
+        st.rerun()
+
+with top_n3:
+    is_t3 = (st.session_state["active_nav"] == "rescue")
+    btn3_t = "🚑  Life-Saving Rescue Protocols"
+    if st.button(btn3_t, key="top_nav_rescue", type="primary" if is_t3 else "secondary", use_container_width=True):
+        st.session_state["active_nav"] = "rescue"
+        st.rerun()
+
+with top_n4:
+    is_t4 = (st.session_state["active_nav"] == "precautions")
+    btn4_t = "🛡️  Safety Guide & Survival Kit"
+    if st.button(btn4_t, key="top_nav_precautions", type="primary" if is_t4 else "secondary", use_container_width=True):
+        st.session_state["active_nav"] = "precautions"
+        st.rerun()
+
+st.markdown("<div style='margin-bottom: 14px;'></div>", unsafe_allow_html=True)
+
+
+# ==============================================================================
+# MAIN MODULE CONTENT
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
-# 1. DAMAGE CLASSIFIER MODULE
+# 1. DAMAGE ASSESSMENT STUDIO MODULE
 # ------------------------------------------------------------------------------
 if st.session_state["active_nav"] == "classifier":
-    st.markdown("### 🎯 Building Damage Classifier Studio")
+    st.markdown("### 🏢 Building Structural Safety & Damage Assessment")
     st.write(
-        "Compare pre-disaster and post-disaster satellite crops of the identical building location. "
-        "The model isolates structural damage and assigns one of 4 damage severity levels: **None**, **Minor**, **Major**, or **Destroyed**."
+        "Evaluate building stability by comparing high-resolution satellite imagery captured before and after a natural disaster. "
+        "The analytical model measures structural disruption, produces impact heatmaps, and assigns an actionable safety rating to protect civilian lives and guide rescue teams."
     )
 
     c_opt, c_view = st.columns([1, 2.3], gap="medium")
 
     with c_opt:
         with st.container(border=True):
-            st.markdown("##### 📥 Input Satellite Imagery")
+            st.markdown("##### 📋 Assessment Configuration")
 
             mode = st.radio(
-                "Image Source:",
-                ["Pick an Example Scenario", "Upload Custom Images"],
+                "Imagery Source:",
+                ["Select a Real-World Disaster Case Study", "Upload Custom Satellite Imagery"],
             )
 
             pre_img = None
             post_img = None
 
-            if mode == "Pick an Example Scenario":
+            if mode == "Select a Real-World Disaster Case Study":
                 example_options = [
-                    "Intact Structure (No Damage Baseline)",
+                    "Intact Structure (Safe Baseline - No Damage)",
                     "🇮🇳 Wayanad Landslide - Total Structural Collapse (Kerala)",
                     "🇮🇳 Cyclone Dana - Major Roof & Cladding Breach (Odisha)",
                     "🇮🇳 Sikkim Teesta Flash Flood - Destroyed Foundation Scour",
@@ -392,18 +468,18 @@ if st.session_state["active_nav"] == "classifier":
                     post_img.save(actual_post_path)
 
             else:
-                up_pre = st.file_uploader("Pre-Disaster Image:", type=["png", "jpg", "jpeg"])
-                up_post = st.file_uploader("Post-Disaster Image:", type=["png", "jpg", "jpeg"])
+                up_pre = st.file_uploader("Pre-Disaster Satellite Image (Before):", type=["png", "jpg", "jpeg"])
+                up_post = st.file_uploader("Post-Disaster Satellite Image (After):", type=["png", "jpg", "jpeg"])
 
                 if up_pre and up_post:
                     pre_img = Image.open(up_pre).convert("RGB")
                     post_img = Image.open(up_post).convert("RGB")
                 else:
-                    st.info("Upload both pre- and post-disaster satellite crops to evaluate.")
+                    st.info("Upload both pre- and post-disaster satellite imagery to run structural assessment.")
 
             st.markdown("---")
-            st.markdown("##### 🎛️ Heatmap Settings")
-            opacity = st.slider("Damage Heatmap Blending:", 0.0, 1.0, 0.55, 0.05)
+            st.markdown("##### 🎨 Damage Heatmap Display")
+            opacity = st.slider("Damage Overlay Intensity:", 0.0, 1.0, 0.55, 0.05)
 
     with c_view:
         if pre_img is not None and post_img is not None:
@@ -411,42 +487,50 @@ if st.session_state["active_nav"] == "classifier":
             pred_label, confidence, probs, heatmap = model.predict(pre_img, post_img)
             blended_heat = blend_heatmap_on_image(post_img, heatmap, alpha=opacity)
 
-            # 3 Images Side-by-Side
+            # 3 Images Side-by-Side: Clean, Human-Friendly Cards
             i1, i2, i3 = st.columns(3)
             with i1:
                 with st.container(border=True):
-                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>1. Pre-Disaster</div>", unsafe_allow_html=True)
+                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>1. Before Disaster (Baseline)</div>", unsafe_allow_html=True)
                     st.image(pre_img, use_container_width=True)
-                    st.caption("Intact building baseline")
+                    st.caption("Intact building & roof footprint")
 
             with i2:
                 with st.container(border=True):
-                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>2. Post-Disaster</div>", unsafe_allow_html=True)
+                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>2. After Disaster (Impact)</div>", unsafe_allow_html=True)
                     st.image(post_img, use_container_width=True)
-                    st.caption("After catastrophe impact")
+                    st.caption("Post-event structural state")
 
             with i3:
                 with st.container(border=True):
-                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>3. Damage Heatmap</div>", unsafe_allow_html=True)
+                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>3. Damage Heatmap Overlay</div>", unsafe_allow_html=True)
                     st.image(blended_heat, use_container_width=True)
-                    st.caption("AI-detected structural change")
+                    st.caption("Identified structural disruption zones")
 
-            # Severity Summary Card
+            # Humanized Verdict Card
             hex_color = CLASS_HEX.get({"none": 0, "minor": 1, "major": 2, "destroyed": 3}.get(pred_label, 0), "#38bdf8")
             badge_class = f"badge-{pred_label}"
 
+            human_verdicts = {
+                "none": "SAFE • NO STRUCTURAL DAMAGE",
+                "minor": "CAUTION • MINOR SURFACE DAMAGE",
+                "major": "RESTRICTED ENTRY • MAJOR STRUCTURAL DAMAGE",
+                "destroyed": "CRITICAL HAZARD • BUILDING COLLAPSED",
+            }
+            verdict_text = human_verdicts.get(pred_label, pred_label.upper())
+
             st.markdown(f"""
-            <div class="inner-card" style="border-left: 6px solid {hex_color}; margin-top: 14px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div class="verdict-box" style="border-left-color: {hex_color};">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                     <div>
-                        <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase;">Classified Damage Severity:</span>
-                        <div style="font-size: 1.5rem; font-weight: 800; color: #f8fafc; margin-top: 4px;">
-                            <span class="badge {badge_class}">{pred_label.upper()}</span>
+                        <div style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Building Safety Evaluation:</div>
+                        <div style="margin-top: 6px;">
+                            <span class="badge-pill {badge_class}">{verdict_text}</span>
                         </div>
                     </div>
                     <div style="text-align: right;">
-                        <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase;">Confidence:</span>
-                        <div style="font-size: 1.8rem; font-weight: 800; color: {hex_color}; font-family: 'JetBrains Mono', monospace;">
+                        <div style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Assessment Confidence:</div>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: {hex_color}; font-family: 'JetBrains Mono', monospace; margin-top: 2px;">
                             {confidence * 100:.1f}%
                         </div>
                     </div>
@@ -454,41 +538,82 @@ if st.session_state["active_nav"] == "classifier":
             </div>
             """, unsafe_allow_html=True)
 
-            # 4 Severity Probabilities
-            st.markdown("##### Severity Probability Distribution:")
+            # Direct Human Safety & Occupancy Guidance Banner
+            if pred_label == "none":
+                st.markdown("""
+                <div class="action-banner action-safe">
+                    <span style="font-size: 1.4rem;">✅</span>
+                    <div>
+                        <strong>Building Clear for Civilian Occupancy & Shelter:</strong><br>
+                        The structural envelope, load-bearing walls, and roof ridgeline remain intact. Normal multi-temporal satellite lighting differences have been filtered out. The facility is certified safe for civilian shelter, staging, and relief distribution.
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+            elif pred_label == "minor":
+                st.markdown("""
+                <div class="action-banner action-warning">
+                    <span style="font-size: 1.4rem;">⚠️</span>
+                    <div>
+                        <strong>Caution: Non-Structural Surface Disruption Detected:</strong><br>
+                        Local roof tile loss, cladding displacement, or perimeter debris identified. The primary concrete/steel framing remains stable. Keep a 10-meter clearance from eaves to avoid falling tiles. Cleared for secondary relief staging with standard hardhat precautions.
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+            elif pred_label == "major":
+                st.markdown("""
+                <div class="action-banner action-danger">
+                    <span style="font-size: 1.4rem;">🚨</span>
+                    <div>
+                        <strong>Restricted Entry: Structural Integrity Severely Compromised:</strong><br>
+                        Significant roof cavity breach, wall displacement, or foundation inundation observed. Unsafe for human habitation. Enforce an immediate 50-meter perimeter cordon. Shoring and stabilization required before any rescue personnel enter.
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                <div class="action-banner action-danger" style="background: rgba(220, 38, 38, 0.15); border-color: #ef4444;">
+                    <span style="font-size: 1.4rem;">💥</span>
+                    <div>
+                        <strong>Critical Emergency: Complete Structural Failure / Collapse:</strong><br>
+                        Total building collapse into rubble mound with structural displacement. High danger of secondary collapse. Task specialized Heavy Urban Search & Rescue (USAR) teams with acoustic listening probes, hydraulic cutters, and search dogs immediately.
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+            # Severity Probabilities
+            st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
+            st.markdown("##### 📊 Damage Severity Assessment Breakdown:")
             p_cols = st.columns(4)
-            labels = ["None (No Damage)", "Minor Damage", "Major Damage", "Destroyed"]
+            labels = ["Intact (Safe)", "Minor Damage", "Major Damage", "Total Collapse"]
             for i, name in enumerate(labels):
                 with p_cols[i]:
                     st.markdown(f"""
-                    <div class="kpi">
-                        <div class="kpi-title">{name}</div>
-                        <div class="kpi-value" style="color: {CLASS_HEX[i]};">{probs[i]*100:.1f}%</div>
+                    <div class="kpi-card">
+                        <div class="kpi-lbl">{name}</div>
+                        <div class="kpi-val" style="color: {CLASS_HEX[i]};">{probs[i]*100:.1f}%</div>
                     </div>
                     """, unsafe_allow_html=True)
                     st.progress(float(probs[i]))
 
-            # Plain-English Summary
-            st.markdown("##### Assessment Summary:")
-            if pred_label == "none":
-                st.success("✅ **No Damage:** Structural envelope and roof plane remain intact. Normal illumination differences between satellite passes correctly ignored.")
-            elif pred_label == "minor":
-                st.warning("⚠️ **Minor Damage:** Superficial roof tile displacement or perimeter debris observed. Primary load-bearing frame intact.")
-            elif pred_label == "major":
-                st.error("🚨 **Major Damage:** Partial roof collapse, substantial structural breach, or heavy foundation inundation. Unsafe for human occupancy.")
-            else:
-                st.error("💥 **Destroyed:** Total structural collapse, foundation scour, or charred ash footprint. Immediate search & rescue priority.")
+            # On-Site Civil Engineering Inspection Checklist
+            with st.expander("📝 On-Site Field Engineering Checklist (For Structural Inspectors)", expanded=False):
+                st.caption("Perform these ground checks before allowing civilian re-entry:")
+                st.checkbox("1. Confirm no active natural gas leaks or severed high-voltage power lines nearby.", value=(pred_label == "none"))
+                st.checkbox("2. Inspect exterior perimeter for 45-degree diagonal masonry shear cracks (X-cracks).", value=False)
+                st.checkbox("3. Inspect foundation corners for differential settlement, sinkholes, or soil liquefaction.", value=(pred_label in ["none", "minor"]))
+                st.checkbox("4. Verify interior ceiling framing and water pipes for overhead collapse risks.", value=False)
+                st.checkbox("5. Check that emergency exits and evacuation paths are completely clear of fallen masonry.", value=(pred_label == "none"))
 
             # Verification Report & Dossier Export
             st.markdown("---")
-            st.markdown("##### 📑 Verification Dossier & Audit Report Generation")
+            st.markdown("##### 📑 Official Inspection Dossier & Audit Report Generation")
             st.write(
-                "Export an official technical assessment dossier with embedded pre/post satellite imagery, "
-                "cross-attention heatmaps, probability distribution, and engineering sign-off blocks."
+                "Export an official technical verification dossier containing embedded pre/post satellite imagery, "
+                "damage heatmaps, probability breakdowns, civilian safety ratings, and engineering sign-off fields."
             )
 
-            is_india_case = ("🇮🇳" in sample_pick) if mode == "Pick an Example Scenario" else False
-            default_clf_agency = "NDRF / NDMA Structural Triage Directorate" if is_india_case else "USAR Structural Assessment Directorate"
+            is_india_case = ("🇮🇳" in sample_pick) if mode == "Select a Real-World Disaster Case Study" else False
+            default_clf_agency = "National Disaster Response Force (NDRF) / NDMA Directorate" if is_india_case else "Civil Protection & Structural Safety Directorate"
             rep_col1, rep_col2, rep_col3 = st.columns([1.5, 1.5, 1.2])
             with rep_col1:
                 assessor_name = st.text_input(
@@ -498,17 +623,17 @@ if st.session_state["active_nav"] == "classifier":
                 )
             with rep_col2:
                 agency_name = st.text_input(
-                    "Command / Directorate:",
+                    "Directorate / Department:",
                     value=default_clf_agency,
                     key="classifier_agency",
                 )
             with rep_col3:
                 now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-                loc_seed = sample_pick if mode == "Pick an Example Scenario" else "Custom Upload"
+                loc_seed = sample_pick if mode == "Select a Real-World Disaster Case Study" else "Custom Upload"
                 dossier_id = generate_dossier_id(loc_seed, now_str)
-                st.markdown(f"<div style='padding-top: 28px;'><span class='badge' style='background: rgba(56, 189, 248, 0.15); color: #38bdf8; font-family: monospace;'>ID: {dossier_id}</span></div>", unsafe_allow_html=True)
+                st.markdown(f"<div style='padding-top: 28px;'><span class='badge-pill' style='background: rgba(59, 130, 246, 0.15); color: #60a5fa; font-family: monospace; font-size: 0.85rem;'>DOSSIER #{dossier_id}</span></div>", unsafe_allow_html=True)
 
-            loc_label = sample_pick if mode == "Pick an Example Scenario" else "Custom Orthorectified AOI"
+            loc_label = sample_pick if mode == "Select a Real-World Disaster Case Study" else "Custom Orthorectified AOI"
             prob_dict = {
                 "None (No Damage)": float(probs[0]),
                 "Minor Damage": float(probs[1]),
@@ -517,13 +642,13 @@ if st.session_state["active_nav"] == "classifier":
             }
 
             if pred_label == "none":
-                directive_text = "Structural envelope intact. Safe for civilian sheltering and staging operations. Routine follow-up scheduled."
+                directive_text = "Structural envelope intact. Certified structurally sound for civilian sheltering and staging operations. Regular vigilance advised."
             elif pred_label == "minor":
-                directive_text = "Superficial cladding/roofing displacement. Maintain 10m perimeter clearance; primary frame structurally sound. Cleared for secondary staging."
+                directive_text = "Superficial cladding/roofing displacement. Maintain 10m perimeter clearance from roof edges. Primary frame structurally sound."
             elif pred_label == "major":
-                directive_text = "Severe structural breach or partial roof collapse. Evacuate 50m perimeter immediately. Structural shoring required prior to interior USAR entry."
+                directive_text = "Severe structural breach or partial roof collapse. Evacuate 50m perimeter immediately. Structural shoring required prior to interior entry."
             else:
-                directive_text = "Total structural collapse detected. Level IV Heavy USAR deployment required. Prepare hydraulic cutting gear and IV bicarbonate for crush syndrome."
+                directive_text = "Total structural collapse detected. Level IV Heavy USAR deployment required. Deploy victim-locating cameras and hydraulic cutters."
 
             report_data = {
                 "dossier_id": dossier_id,
@@ -547,7 +672,7 @@ if st.session_state["active_nav"] == "classifier":
             btn_col1, btn_col2, btn_col3 = st.columns(3)
             with btn_col1:
                 st.download_button(
-                    label="📥 Download Word Dossier (.docx)",
+                    label="📄 Download Inspection Dossier (.docx)",
                     data=docx_bytes,
                     file_name=f"Damage_Dossier_{dossier_id}.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -556,7 +681,7 @@ if st.session_state["active_nav"] == "classifier":
                 )
             with btn_col2:
                 st.download_button(
-                    label="📄 Download Print-Ready Report (.html)",
+                    label="🖨️ Download Print-Ready Report (.html)",
                     data=html_str,
                     file_name=f"Damage_Report_{dossier_id}.html",
                     mime="text/html",
@@ -565,7 +690,7 @@ if st.session_state["active_nav"] == "classifier":
                 )
             with btn_col3:
                 st.download_button(
-                    label="💾 Download Audit Telemetry (.json)",
+                    label="💾 Download Audit Verification Data (.json)",
                     data=json_str,
                     file_name=f"Audit_Telemetry_{dossier_id}.json",
                     mime="application/json",
@@ -573,18 +698,19 @@ if st.session_state["active_nav"] == "classifier":
                     use_container_width=True,
                 )
 
-            with st.expander("🔍 Preview Assessment Dossier (Interactive HTML)", expanded=False):
+            with st.expander("🔍 Preview Assessment Dossier (Interactive View)", expanded=False):
                 st.components.v1.html(html_str, height=650, scrolling=True)
+
 
 # ------------------------------------------------------------------------------
 # 2. INDIAN NATIONAL DISASTER WATCH & SATELLITE INGESTION MODULE
 # ------------------------------------------------------------------------------
 elif st.session_state["active_nav"] == "realtime":
-    st.markdown("### 🛰️ Indian National Disaster Watch & Satellite Ingestion")
+    st.markdown("### 🛰️ Indian National Disaster Live Incident Monitor")
     st.write(
-        "Ingests real-time natural disaster telemetry across India from the **National Disaster Management Authority (NDMA)**, "
+        "Monitors active natural disaster alerts across India in real time from the **National Disaster Management Authority (NDMA)**, "
         "**National Center for Seismology (NCS / MoES)**, and the **India Meteorological Department (IMD)**. "
-        "Select an active Indian disaster to automatically task orbital satellite imagery and run the dual-branch structural damage classifier."
+        "Select an active incident to inspect satellite passes, analyze structural damage, and review NDRF operational directives."
     )
 
     # Ingest Indian National Disasters (NCS / NDMA / IMD)
@@ -602,12 +728,12 @@ elif st.session_state["active_nav"] == "realtime":
 
     with c_event:
         with st.container(border=True):
-            st.markdown("##### 🔴 Active Indian Disaster Telemetry")
+            st.markdown("##### 🔴 Active Indian Incident Monitor")
 
             # Selection dropdown
             event_titles = [f"[{e['alert_level']}] {e['title']}" for e in events]
             chosen_idx = st.selectbox(
-                "Select Monitored Disaster:",
+                "Choose Disaster Event to Inspect:",
                 range(len(events)),
                 format_func=lambda i: event_titles[i],
             )
@@ -616,10 +742,10 @@ elif st.session_state["active_nav"] == "realtime":
             alert_color = "#ef4444" if ev["alert_level"] == "RED" else "#f59e0b" if ev["alert_level"] == "ORANGE" else "#10b981"
 
             state_badge = f"<div style='font-size: 0.82rem; color: #cbd5e1; margin-bottom: 4px;'><strong>State / Territory:</strong> {ev['state']}</div>" if ev.get("state") else ""
-            ndrf_badge = f"<div style='font-size: 0.8rem; color: #fbbf24; margin-top: 4px; margin-bottom: 4px;'><strong>🇮🇳 Assigned Unit:</strong> {ev['ndrf_battalion']}</div>" if ev.get("ndrf_battalion") else ""
+            ndrf_badge = f"<div style='font-size: 0.82rem; color: #fbbf24; margin-top: 4px; margin-bottom: 4px;'><strong>🇮🇳 Assigned Unit:</strong> {ev['ndrf_battalion']}</div>" if ev.get("ndrf_battalion") else ""
 
             st.markdown(f"""
-            <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px; margin-top: 10px;">
+            <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 14px; margin-top: 10px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                     <span style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Category:</span>
                     <span style="background: {alert_color}; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">{ev['alert_level']} ALERT</span>
@@ -632,7 +758,7 @@ elif st.session_state["active_nav"] == "realtime":
                 <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 4px;"><strong>Coordinates:</strong> {ev['coordinates'][0]}°N, {ev['coordinates'][1]}°E</div>
                 <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 4px;"><strong>Recorded:</strong> {ev['time']}</div>
                 <div style="font-size: 0.82rem; color: #38bdf8; margin-top: 6px;"><strong>Satellite AOI:</strong> {ev['satellite_aoi']}</div>
-                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 6px;">
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; border-top: 1px solid #334155; padding-top: 6px;">
                     {ev['description']}
                 </div>
             </div>
@@ -641,15 +767,15 @@ elif st.session_state["active_nav"] == "realtime":
 
             st.markdown("---")
             feed_mode = st.radio(
-                "🛰️ Satellite Feed Mode:",
-                ["Rectangular Building Satellite AOI (Co-Registered)", "Experimental Live Orbital Stream (ESRI / Sentinel-2)"],
+                "Satellite View Mode:",
+                ["Standard Orthorectified Satellite Imagery", "Live Orbital Tile Stream (ESRI / Sentinel-2)"],
                 index=0,
                 key="rt_stream_choice"
             )
-            attempt_live_stream = (feed_mode == "Experimental Live Orbital Stream (ESRI / Sentinel-2)")
+            attempt_live_stream = (feed_mode == "Live Orbital Tile Stream (ESRI / Sentinel-2)")
 
-            with st.expander("📍 Custom Coordinates Satellite Explorer"):
-                st.caption("Fetch live satellite tiles for any custom coordinate or global landmark:")
+            with st.expander("📍 Custom Coordinates Explorer"):
+                st.caption("Fetch satellite tiles for any custom coordinate or landmark:")
                 loc_presets = {
                     "Use Current Disaster Event": None,
                     "LPU Campus, Phagwara, Punjab (31.25°N, 75.70°E)": (31.253, 75.703),
@@ -669,9 +795,9 @@ elif st.session_state["active_nav"] == "realtime":
 
                 c_lat = st.number_input("Latitude (°N):", -90.0, 90.0, p_lat, format="%.4f", key="inp_custom_lat")
                 c_lon = st.number_input("Longitude (°E):", -180.0, 180.0, p_lon, format="%.4f", key="inp_custom_lon")
-                c_sev = st.select_slider("Simulated Damage:", options=[0, 1, 2, 3], value=int(ev.get("simulated_severity", 2)), format_func=lambda s: {0:"None", 1:"Minor", 2:"Major", 3:"Destroyed"}[s], key="inp_custom_sev")
+                c_sev = st.select_slider("Damage Severity Level:", options=[0, 1, 2, 3], value=int(ev.get("simulated_severity", 2)), format_func=lambda s: {0:"None", 1:"Minor", 2:"Major", 3:"Destroyed"}[s], key="inp_custom_sev")
                 
-                if st.button("🛰️ Ingest Custom Satellite AOI", use_container_width=True, key="btn_run_custom"):
+                if st.button("🛰️ Inspect Coordinates", use_container_width=True, key="btn_run_custom"):
                     st.session_state["custom_override_event"] = {
                         "id": f"custom_{c_lat}_{c_lon}",
                         "title": f"Custom Orbital Satellite AOI [{c_lat:.3f}°N, {c_lon:.3f}°E]",
@@ -692,14 +818,14 @@ elif st.session_state["active_nav"] == "realtime":
                     st.rerun()
 
             st.markdown("---")
-            st.markdown("##### 🎛️ Real-Time Heatmap Blending")
-            rt_opacity = st.slider("Damage Activation Opacity:", 0.0, 1.0, 0.60, 0.05, key="rt_slider")
+            st.markdown("##### 🎨 Damage Heatmap Display")
+            rt_opacity = st.slider("Damage Overlay Intensity:", 0.0, 1.0, 0.60, 0.05, key="rt_slider")
 
     with c_sat:
         # Check if custom override active
         if "custom_override_event" in st.session_state and st.session_state["custom_override_event"]:
             ev = st.session_state["custom_override_event"]
-            if st.button("↩️ Reset to Live Disaster Feeds", key="btn_reset_custom"):
+            if st.button("↩️ Reset to Live Incident Monitor", key="btn_reset_custom"):
                 st.session_state["custom_override_event"] = None
                 st.rerun()
 
@@ -712,12 +838,12 @@ elif st.session_state["active_nav"] == "realtime":
 
         # Live Satellite Telemetry Dock
         is_live = meta.get("is_live_tile", False)
-        live_badge = "🟢 LIVE ORBITAL TILE" if is_live else "🛰️ VERIFIED SATELLITE ARCHIVE"
+        live_badge = "🟢 LIVE ORBITAL PASS" if is_live else "🛰️ VERIFIED HIGH-RES ARCHIVE"
         badge_bg = "rgba(16, 185, 129, 0.15)" if is_live else "rgba(56, 189, 248, 0.15)"
         badge_color = "#34d399" if is_live else "#38bdf8"
 
         st.markdown(f"""
-        <div style="background: #020617; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 10px 16px; margin-bottom: 12px;">
+        <div style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 10px 16px; margin-bottom: 12px;">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                 <div style="display: flex; align-items: center; gap: 8px;">
                     <span style="background: {badge_bg}; color: {badge_color}; border: 1px solid {badge_color}; border-radius: 14px; padding: 2px 10px; font-size: 0.72rem; font-weight: 700;">{live_badge}</span>
@@ -734,38 +860,46 @@ elif st.session_state["active_nav"] == "realtime":
         si1, si2, si3 = st.columns(3)
         with si1:
             with st.container(border=True):
-                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>1. Pre-Disaster Baseline</div>", unsafe_allow_html=True)
+                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>1. Baseline (Before Event)</div>", unsafe_allow_html=True)
                 st.image(pre_img, use_container_width=True)
-                st.caption(f"Intact baseline capture | {meta.get('tile_info', 'Sentinel-2 AOI')}")
+                st.caption(f"Baseline capture | {meta.get('tile_info', 'Sentinel-2 AOI')}")
 
         with si2:
             with st.container(border=True):
-                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>2. Post-Disaster Satellite Pass</div>", unsafe_allow_html=True)
+                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>2. Impact (After Event)</div>", unsafe_allow_html=True)
                 st.image(post_img, use_container_width=True)
-                st.caption(f"Post-disaster satellite pass | {ev['magnitude']}")
+                st.caption(f"Post-event satellite pass | {ev['magnitude']}")
 
         with si3:
             with st.container(border=True):
-                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>3. Cross-Attention Heatmap</div>", unsafe_allow_html=True)
+                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>3. Impact Heatmap</div>", unsafe_allow_html=True)
                 st.image(blended_heat, use_container_width=True)
-                st.caption(f"AI structural collapse focus | {confidence*100:.1f}%")
+                st.caption(f"Structural disruption focus | {confidence*100:.1f}%")
 
         # Severity Summary Card
         hex_color = CLASS_HEX.get({"none": 0, "minor": 1, "major": 2, "destroyed": 3}.get(pred_label, 0), "#38bdf8")
         badge_class = f"badge-{pred_label}"
 
+        human_verdicts = {
+            "none": "SAFE • NO STRUCTURAL DAMAGE",
+            "minor": "CAUTION • MINOR SURFACE DAMAGE",
+            "major": "RESTRICTED ENTRY • MAJOR STRUCTURAL DAMAGE",
+            "destroyed": "CRITICAL HAZARD • BUILDING COLLAPSED",
+        }
+        rt_verdict = human_verdicts.get(pred_label, pred_label.upper())
+
         st.markdown(f"""
-        <div class="inner-card" style="border-left: 6px solid {hex_color}; margin-top: 14px;">
+        <div class="verdict-box" style="border-left-color: {hex_color};">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                 <div>
-                    <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase;">Real-Time Damage Classification:</span>
-                    <div style="font-size: 1.5rem; font-weight: 800; color: #f8fafc; margin-top: 4px;">
-                        <span class="badge {badge_class}">{pred_label.upper()}</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Structural Safety Verdict:</span>
+                    <div style="margin-top: 6px;">
+                        <span class="badge-pill {badge_class}">{rt_verdict}</span>
                     </div>
                 </div>
                 <div style="text-align: right;">
-                    <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase;">Confidence:</span>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: {hex_color}; font-family: 'JetBrains Mono', monospace;">
+                    <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Confidence:</span>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: {hex_color}; font-family: 'JetBrains Mono', monospace; margin-top: 2px;">
                         {confidence * 100:.1f}%
                     </div>
                 </div>
@@ -774,21 +908,21 @@ elif st.session_state["active_nav"] == "realtime":
         """, unsafe_allow_html=True)
 
         # 4 Probabilities
-        st.markdown("##### Real-Time Damage Probability Distribution:")
+        st.markdown("##### 📊 Damage Severity Assessment Breakdown:")
         p_cols = st.columns(4)
-        labels = ["None (No Damage)", "Minor Damage", "Major Damage", "Destroyed"]
+        labels = ["Intact (Safe)", "Minor Damage", "Major Damage", "Total Collapse"]
         for i, name in enumerate(labels):
             with p_cols[i]:
                 st.markdown(f"""
-                <div class="kpi">
-                    <div class="kpi-title">{name}</div>
-                    <div class="kpi-value" style="color: {CLASS_HEX[i]};">{probs[i]*100:.1f}%</div>
+                <div class="kpi-card">
+                    <div class="kpi-lbl">{name}</div>
+                    <div class="kpi-val" style="color: {CLASS_HEX[i]};">{probs[i]*100:.1f}%</div>
                 </div>
                 """, unsafe_allow_html=True)
                 st.progress(float(probs[i]))
 
         # First-Responder Directives
-        st.markdown("##### 🚨 Automated National Disaster Response Force (NDRF / SDRF) Mandate:")
+        st.markdown("##### 🚨 Official National Disaster Response Force (NDRF / SDRF) Mandate:")
         rt_directive = get_ndrf_operational_directive(pred_label, ev)
         if pred_label in ["destroyed", "major"]:
             st.error(rt_directive)
@@ -800,7 +934,7 @@ elif st.session_state["active_nav"] == "realtime":
         # Pipeline Architecture Card
         st.markdown("""
         <div style="background: rgba(56, 189, 248, 0.05); border: 1px dashed rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 12px 16px; margin-top: 14px;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">📡 ISRO Bhuvan / NDMA Disaster Telemetry Pipeline:</span>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">📡 National Disaster Telemetry Pipeline:</span>
             <div style="color: #94a3b8; font-size: 0.82rem; margin-top: 4px; line-height: 1.5;">
                 <code>NDMA Sachet / IMD Early Warning</code> &rarr; <code>ISRO Cartosat / Sentinel-2 Tasking</code> &rarr; <code>Sub-Pixel Coregistration</code> &rarr; <code>Dual-Branch Siamese CNN</code> &rarr; <code>NDRF Battalion Deployment</code>
             </div>
@@ -812,7 +946,7 @@ elif st.session_state["active_nav"] == "realtime":
         st.markdown("##### 📑 Indian National Disaster Verification Dossier & Audit Report")
         st.write(
             "Export an authenticated civil defense verification dossier containing live event telemetry, "
-            "orbital satellite imagery, cross-attention heatmap evidence, and automated rescue directives."
+            "satellite imagery, damage heatmap evidence, and automated rescue directives."
         )
 
         r_col1, r_col2, r_col3 = st.columns([1.5, 1.5, 1.2])
@@ -831,7 +965,7 @@ elif st.session_state["active_nav"] == "realtime":
         with r_col3:
             rt_now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
             rt_dossier_id = generate_dossier_id(ev.get("title", "Disaster AOI"), rt_now_str)
-            st.markdown(f"<div style='padding-top: 28px;'><span class='badge' style='background: rgba(56, 189, 248, 0.15); color: #38bdf8; font-family: monospace;'>ID: {rt_dossier_id}</span></div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='padding-top: 28px;'><span class='badge-pill' style='background: rgba(59, 130, 246, 0.15); color: #60a5fa; font-family: monospace; font-size: 0.85rem;'>DOSSIER #{rt_dossier_id}</span></div>", unsafe_allow_html=True)
 
         rt_prob_dict = {
             "None (No Damage)": float(probs[0]),
@@ -862,7 +996,7 @@ elif st.session_state["active_nav"] == "realtime":
         b1, b2, b3 = st.columns(3)
         with b1:
             st.download_button(
-                label="📥 Download Word Dossier (.docx)",
+                label="📄 Download Inspection Dossier (.docx)",
                 data=rt_docx_bytes,
                 file_name=f"India_Disaster_Dossier_{rt_dossier_id}.docx",
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -871,7 +1005,7 @@ elif st.session_state["active_nav"] == "realtime":
             )
         with b2:
             st.download_button(
-                label="📄 Download Print-Ready Report (.html)",
+                label="🖨️ Download Print-Ready Report (.html)",
                 data=rt_html_str,
                 file_name=f"India_Disaster_Report_{rt_dossier_id}.html",
                 mime="text/html",
@@ -880,7 +1014,7 @@ elif st.session_state["active_nav"] == "realtime":
             )
         with b3:
             st.download_button(
-                label="💾 Download Audit Telemetry (.json)",
+                label="💾 Download Audit Verification Data (.json)",
                 data=rt_json_str,
                 file_name=f"India_Telemetry_{rt_dossier_id}.json",
                 mime="application/json",
@@ -888,106 +1022,111 @@ elif st.session_state["active_nav"] == "realtime":
                 use_container_width=True,
             )
 
-        with st.expander("🔍 Preview Assessment Dossier (Interactive HTML)", expanded=False):
+        with st.expander("🔍 Preview Assessment Dossier (Interactive View)", expanded=False):
             st.components.v1.html(rt_html_str, height=650, scrolling=True)
 
+
 # ------------------------------------------------------------------------------
-# 3. HOW TO SAVE SOMEONE MODULE
+# 3. HOW TO SAVE SOMEONE (LIFE-SAVING PROTOCOLS)
 # ------------------------------------------------------------------------------
 elif st.session_state["active_nav"] == "rescue":
-    st.markdown("### 🚑 How to Save Someone (Emergency Rescue Protocols)")
-    st.write("Essential life-saving rules, first aid, and triage to follow when rescuing survivors from structural damage.")
+    st.markdown("### 🚑 Life-Saving Rescue Protocols & Emergency Triage")
+    st.write("Essential life-saving rules, first aid measures, and victim triage protocols when responding to structural collapse emergencies.")
 
     r1, r2, r3, r4 = st.columns(4)
     with r1:
         st.markdown("""
-        <div class="inner-card" style="height: 100%;">
-            <h5 style="color: #38bdf8;">1. Check Safety First</h5>
-            <p style="font-size: 0.85rem; color: #cbd5e1;">
-            Ensure the area is safe before entering. Watch out for live electrical wires, gas leaks, and unstable overhead slabs.
+        <div class="human-card" style="height: 100%;">
+            <div style="font-size: 1.8rem; margin-bottom: 6px;">🛡️</div>
+            <h5 style="color: #38bdf8; margin-top: 0;">1. Ensure Safety First</h5>
+            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            Never enter an unstable building alone. Watch out for arcing electrical lines, leaking gas, and hanging concrete slabs.
             </p>
         </div>
         """, unsafe_allow_html=True)
     with r2:
         st.markdown("""
-        <div class="inner-card" style="height: 100%;">
-            <h5 style="color: #38bdf8;">2. Acoustic Search</h5>
-            <p style="font-size: 0.85rem; color: #cbd5e1;">
-            Call out loudly and listen for replies. Instruct trapped victims to tap three times on pipes or solid walls if they cannot shout.
+        <div class="human-card" style="height: 100%;">
+            <div style="font-size: 1.8rem; margin-bottom: 6px;">👂</div>
+            <h5 style="color: #38bdf8; margin-top: 0;">2. Acoustic Search</h5>
+            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            Call out loudly and listen in complete silence. Instruct trapped victims to tap three times on metallic pipes or solid concrete.
             </p>
         </div>
         """, unsafe_allow_html=True)
     with r3:
         st.markdown("""
-        <div class="inner-card" style="height: 100%;">
-            <h5 style="color: #38bdf8;">3. Stop Bleeding</h5>
-            <p style="font-size: 0.85rem; color: #cbd5e1;">
-            Apply firm direct pressure with clean gauze. For severe limb arterial bleeding, apply a windlass tourniquet 2-3 inches above the wound.
+        <div class="human-card" style="height: 100%;">
+            <div style="font-size: 1.8rem; margin-bottom: 6px;">🩹</div>
+            <h5 style="color: #38bdf8; margin-top: 0;">3. Stop Bleeding</h5>
+            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            Apply firm direct pressure with clean dressing. For severe limb arterial bleeding, apply a tourniquet 2-3 inches above the wound.
             </p>
         </div>
         """, unsafe_allow_html=True)
     with r4:
         st.markdown("""
-        <div class="inner-card" style="height: 100%;">
-            <h5 style="color: #38bdf8;">4. Prevent Shock</h5>
-            <p style="font-size: 0.85rem; color: #cbd5e1;">
-            Shock causes body temperature to drop dangerously. Wrap the victim in an emergency foil blanket and elevate feet 12 inches.
+        <div class="human-card" style="height: 100%;">
+            <div style="font-size: 1.8rem; margin-bottom: 6px;">🌡️</div>
+            <h5 style="color: #38bdf8; margin-top: 0;">4. Prevent Shock</h5>
+            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            Hypothermia and shock set in quickly. Wrap the victim in an emergency thermal blanket, reassure them, and elevate feet 12 inches.
             </p>
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Critical Crush Syndrome Warning
+    # Critical Medical Warning on Crush Syndrome
     st.markdown("""
-    <div class="inner-card" style="border-left: 6px solid #ef4444; background: rgba(239, 68, 68, 0.08);">
+    <div class="human-card" style="border-left: 6px solid #ef4444; background: rgba(239, 68, 68, 0.08);">
         <h5 style="color: #ef4444; margin-top: 0;">⚠️ Mandatory Medical Warning: Crush Syndrome</h5>
         <p style="color: #e2e8f0; font-size: 0.92rem; line-height: 1.6; margin-bottom: 0;">
-        If a victim has had a limb pinned beneath a heavy concrete slab for <strong>more than 2 hours</strong>, 
+        If a survivor's limb has been trapped beneath a heavy concrete slab for <strong>more than 2 hours</strong>, 
         <strong>DO NOT suddenly lift the weight off</strong> without medical personnel prepared with IV hydration! 
-        Sudden release washes toxic potassium and myoglobin accumulated in the crushed muscle directly into the heart, causing 
-        <strong>fatal cardiac arrest or acute renal failure</strong> within minutes (reperfusion shock).
+        Sudden release flushes toxic potassium and myoglobin accumulated in the crushed muscle directly into circulation, causing 
+        <strong>fatal cardiac arrest or acute kidney failure</strong> within minutes (reperfusion shock). Always administer IV saline before freeing the limb.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
     # 4-Color Triage Guide
-    st.markdown("##### 🚦 Quick Triage Guide (Who to Help First):")
+    st.markdown("##### 🚦 Emergency Triage Priority Guide (Who to Help First):")
     t1, t2, t3, t4 = st.columns(4)
     with t1:
         st.markdown("""
-        <div style="background: rgba(239, 68, 68, 0.2); border-left: 4px solid #ef4444; padding: 12px; border-radius: 8px;">
-            <strong style="color: #ef4444;">🔴 Immediate (Help 1st)</strong><br>
-            <span style="font-size: 0.82rem; color: #cbd5e1;">Cannot breathe easily or severe arterial bleeding.</span>
+        <div style="background: rgba(239, 68, 68, 0.15); border-left: 4px solid #ef4444; padding: 14px; border-radius: 8px;">
+            <strong style="color: #ef4444;">🔴 Immediate (Priority 1)</strong><br>
+            <span style="font-size: 0.85rem; color: #cbd5e1;">Airway obstruction, tension pneumothorax, or massive bleeding. Treat first!</span>
         </div>
         """, unsafe_allow_html=True)
     with t2:
         st.markdown("""
-        <div style="background: rgba(245, 158, 11, 0.2); border-left: 4px solid #f59e0b; padding: 12px; border-radius: 8px;">
-            <strong style="color: #f59e0b;">🟡 Delayed (Help 2nd)</strong><br>
-            <span style="font-size: 0.82rem; color: #cbd5e1;">Broken bones or deep cuts, but hemodynamically stable.</span>
+        <div style="background: rgba(245, 158, 11, 0.15); border-left: 4px solid #f59e0b; padding: 14px; border-radius: 8px;">
+            <strong style="color: #f59e0b;">🟡 Delayed (Priority 2)</strong><br>
+            <span style="font-size: 0.85rem; color: #cbd5e1;">Fractures, deep lacerations, stable vitals. Needs medical care after Priority 1.</span>
         </div>
         """, unsafe_allow_html=True)
     with t3:
         st.markdown("""
-        <div style="background: rgba(16, 185, 129, 0.2); border-left: 4px solid #10b981; padding: 12px; border-radius: 8px;">
-            <strong style="color: #10b981;">🟢 Minor (Can Walk)</strong><br>
-            <span style="font-size: 0.82rem; color: #cbd5e1;">Small cuts and bruises. Can walk on their own.</span>
+        <div style="background: rgba(16, 185, 129, 0.15); border-left: 4px solid #10b981; padding: 14px; border-radius: 8px;">
+            <strong style="color: #10b981;">🟢 Minor (Walking Wounded)</strong><br>
+            <span style="font-size: 0.85rem; color: #cbd5e1;">Minor cuts, abrasions, sprains. Able to walk and assist with minor tasks.</span>
         </div>
         """, unsafe_allow_html=True)
     with t4:
         st.markdown("""
-        <div style="background: rgba(100, 116, 139, 0.2); border-left: 4px solid #64748b; padding: 12px; border-radius: 8px;">
-            <strong style="color: #94a3b8;">⚫ Deceased / Expectant</strong><br>
-            <span style="font-size: 0.82rem; color: #cbd5e1;">No pulse or breathing after opening airway.</span>
+        <div style="background: rgba(100, 116, 139, 0.15); border-left: 4px solid #64748b; padding: 14px; border-radius: 8px;">
+            <strong style="color: #94a3b8;">⚫ Expectant / Deceased</strong><br>
+            <span style="font-size: 0.85rem; color: #cbd5e1;">No pulse or respiration after opening airway. Direct resources to viable victims.</span>
         </div>
         """, unsafe_allow_html=True)
 
     # Official Indian National Emergency Helplines
     st.markdown("""
-    <div style="background: rgba(245, 158, 11, 0.08); border: 1px dashed rgba(245, 158, 11, 0.4); border-radius: 10px; padding: 14px 18px; margin-top: 20px;">
-        <span style="color: #fbbf24; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">🇮🇳 Official Indian National Emergency Helplines & Response Hotlines:</span>
-        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 8px; font-size: 0.82rem; color: #cbd5e1;">
+    <div style="background: rgba(245, 158, 11, 0.08); border: 1px dashed rgba(245, 158, 11, 0.4); border-radius: 12px; padding: 16px 20px; margin-top: 22px;">
+        <span style="color: #fbbf24; font-size: 0.88rem; font-weight: 700; text-transform: uppercase;">🇮🇳 Official National Emergency Helplines (India):</span>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; font-size: 0.86rem; color: #cbd5e1;">
             <span>🚨 <strong>112</strong>: Pan-India Emergency All-in-One</span>
             <span>🏛️ <strong>1078</strong>: NDMA National Disaster Helpline</span>
             <span>🚑 <strong>108</strong>: Emergency Ambulance Service</span>
@@ -998,12 +1137,13 @@ elif st.session_state["active_nav"] == "rescue":
     </div>
     """, unsafe_allow_html=True)
 
+
 # ------------------------------------------------------------------------------
-# 3. PRECAUTIONS TO TAKE MODULE
+# 4. SAFETY PRECAUTIONS & 72-HOUR SURVIVAL KIT MODULE
 # ------------------------------------------------------------------------------
 elif st.session_state["active_nav"] == "precautions":
-    st.markdown("### 🛡️ Precautions to Take (Before, During, and After)")
-    st.write("Essential safety precautions across all three disaster phases and an emergency survival kit auditor.")
+    st.markdown("### 🛡️ Safety Precautions & 72-Hour Survival Kit")
+    st.write("Comprehensive safety protocols across all three disaster phases, and an interactive 72-hour survival kit readiness auditor.")
 
     stage = st.radio(
         "Disaster Phase:",
@@ -1013,44 +1153,44 @@ elif st.session_state["active_nav"] == "precautions":
 
     if stage == "Before Disaster (Preparation)":
         st.markdown("""
-        <div class="inner-card">
-            <h5>📦 Precautions Before Disaster:</h5>
-            <ul style="color: #cbd5e1; line-height: 1.8;">
-                <li><strong>Anchor Heavy Furniture:</strong> Strap water heaters, tall bookcases, and appliances to wall studs so they do not tip over during earthquakes.</li>
-                <li><strong>Assemble 72-Hour Survival Go-Bag:</strong> Pack 4 liters of water per person per day, non-perishable rations, and medical kits.</li>
-                <li><strong>Plan Evacuation Paths:</strong> Identify two independent road exits from your neighborhood and establish an emergency out-of-town contact.</li>
-                <li><strong>Structural Hurricane Strapping:</strong> In cyclonic coastal regions, fasten roof trusses down to exterior bearing walls with galvanized steel hurricane ties.</li>
+        <div class="human-card">
+            <h5 style="color: #38bdf8;">📦 Essential Precautions Before Disaster Strikes:</h5>
+            <ul style="color: #cbd5e1; line-height: 1.9; font-size: 0.92rem;">
+                <li><strong>Anchor Heavy Furniture:</strong> Secure tall bookcases, water heaters, and heavy appliances to wall studs to prevent them from toppling during seismic tremors.</li>
+                <li><strong>Assemble 72-Hour Survival Go-Bag:</strong> Pack 4 liters of potable water per person per day, non-perishable canned food, medical supplies, and copies of important documents.</li>
+                <li><strong>Establish Family Evacuation Plan:</strong> Designate two independent meeting spots and identify an out-of-state emergency family contact.</li>
+                <li><strong>Structural Hurricane Strapping:</strong> In cyclonic and storm regions, secure roof trusses to load-bearing walls using galvanized steel hurricane ties.</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
     elif stage == "During Disaster (Survival)":
         st.markdown("""
-        <div class="inner-card">
-            <h5>🚨 Precautions During Disaster:</h5>
-            <ul style="color: #cbd5e1; line-height: 1.8;">
-                <li><strong>Earthquake:</strong> <strong>Drop, Cover, and Hold On!</strong> Drop to hands and knees under a sturdy desk. Never run outside or stand in doorframes.</li>
-                <li><strong>Flood:</strong> <strong>Turn Around, Don't Drown!</strong> 12 inches of rushing water can sweep away passenger cars. Never drive or wade through floodwaters.</li>
-                <li><strong>Cyclone / Hurricane:</strong> Shelter in an interior windowless room (hallway, closet, or bathroom) on the lowest floor.</li>
-                <li><strong>Wildfire:</strong> Evacuate immediately at Level 3 'Go' notice. Don 100% cotton garments and an N95 respirator mask.</li>
+        <div class="human-card">
+            <h5 style="color: #38bdf8;">🚨 Critical Survival Actions During Disaster:</h5>
+            <ul style="color: #cbd5e1; line-height: 1.9; font-size: 0.92rem;">
+                <li><strong>Earthquake:</strong> <strong>Drop, Cover, and Hold On!</strong> Drop to your hands and knees under a sturdy desk. Never run outside or stand in doorframes.</li>
+                <li><strong>Flood:</strong> <strong>Turn Around, Don't Drown!</strong> Just 12 inches of rushing water can sweep away passenger cars. Never walk or drive through flooded roadways.</li>
+                <li><strong>Cyclone / Hurricane:</strong> Shelter in an interior windowless room (hallway, closet, or bathroom) on the lowest floor. Stay away from windows.</li>
+                <li><strong>Wildfire:</strong> Evacuate immediately when ordered. Wear 100% cotton clothing and an N95 respirator mask to protect lungs from hot embers and particulate smoke.</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
     else:
         st.markdown("""
-        <div class="inner-card">
-            <h5>⚠️ Precautions After Disaster:</h5>
-            <ul style="color: #cbd5e1; line-height: 1.8;">
-                <li><strong>Do Not Flip Switches if You Smell Gas:</strong> Electrical sparks from switches ignite trapped gas. Open windows and turn off the main gas valve outside.</li>
-                <li><strong>Stay 35 Feet Away from Downed Powerlines:</strong> Treat all fallen electrical lines as energized and live. Never touch standing water near downed wires.</li>
-                <li><strong>Inspect for X-Cracks:</strong> Do not enter buildings displaying diagonal 45-degree shear fractures on masonry walls until cleared by engineers.</li>
-                <li><strong>Boil Tap Water:</strong> Pipe breaks cross-contaminate tap water with sewage. Boil vigorously for 3 minutes before drinking.</li>
+        <div class="human-card">
+            <h5 style="color: #38bdf8;">⚠️ Safety Precautions in the Disaster Aftermath:</h5>
+            <ul style="color: #cbd5e1; line-height: 1.9; font-size: 0.92rem;">
+                <li><strong>Never Flip Electrical Switches if Gas is Smelled:</strong> Sparks can ignite pocketed gas. Open windows and turn off the main gas valve from the outside immediately.</li>
+                <li><strong>Maintain 35-Foot Distance from Downed Lines:</strong> Treat all fallen electrical lines as energized. Never touch standing water near downed poles.</li>
+                <li><strong>Inspect for X-Cracks:</strong> Do not enter masonry structures displaying diagonal 45-degree shear cracks until certified safe by a civil engineer.</li>
+                <li><strong>Boil Tap Water:</strong> Pipe breaks contaminate tap water with groundwater and sewage. Boil vigorously for at least 3 minutes before drinking.</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("---")
-    st.markdown("##### 🎒 72-Hour Survival Kit Checklist:")
-    st.write("Check off the items you have ready:")
+    st.markdown("##### 🎒 Interactive 72-Hour Survival Kit Auditor:")
+    st.write("Check off the emergency supplies you currently have equipped in your home or go-bag:")
 
     chk_cols = st.columns(3)
     checked_count = 0
@@ -1062,58 +1202,51 @@ elif st.session_state["active_nav"] == "precautions":
                 checked_count += 1
 
     pct = int((checked_count / total_items) * 100)
-    st.markdown(f"**Emergency Kit Readiness: {pct}% ({checked_count}/{total_items} items equipped)**")
+    ready_color = "#10b981" if pct >= 80 else "#f59e0b" if pct >= 40 else "#ef4444"
+    st.markdown(f"<div style='font-size: 1rem; font-weight: 700; color: {ready_color}; margin-top: 10px;'>Go-Bag Preparedness Score: {pct}% ({checked_count}/{total_items} items equipped)</div>", unsafe_allow_html=True)
     st.progress(checked_count / total_items)
 
-# ==============================================================================
-# BOTTOM DOCK: 4 ATTRACTIVE OPTIONS IN A ROW WITH LIFT & GLOW HOVER EFFECTS
-# ==============================================================================
-st.markdown("<div style='margin-top: 28px; margin-bottom: 12px; text-align: center; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8;'>🧭 SELECT DASHBOARD VIEW (Click an option to switch):</div>", unsafe_allow_html=True)
 
-col_b1, col_b2, col_b3, col_b4 = st.columns(4, gap="medium")
+# ==============================================================================
+# BOTTOM DOCK: QUICK SWITCHER FOR EASY ACCESS AT THE BOTTOM OF THE PAGE
+# ==============================================================================
+st.markdown("<div style='margin-top: 36px; margin-bottom: 14px; text-align: center; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #94a3b8;'>🧭 QUICK MODULE SELECTOR:</div>", unsafe_allow_html=True)
 
-# Option 1: Damage Classifier
+col_b1, col_b2, col_b3, col_b4 = st.columns(4, gap="small")
+
 with col_b1:
     is_active1 = (st.session_state["active_nav"] == "classifier")
-    btn1_type = "primary" if is_active1 else "secondary"
-    btn1_text = "🎯  Damage Classifier\nPre/Post Satellite Studio"
-    if st.button(btn1_text, key="bottom_btn_classifier", type=btn1_type, use_container_width=True):
+    b1_text = "🏢  Damage Assessment Studio"
+    if st.button(b1_text, key="bottom_btn_classifier", type="primary" if is_active1 else "secondary", use_container_width=True):
         st.session_state["active_nav"] = "classifier"
         st.rerun()
 
-# Option 2: Indian Disaster Watch
 with col_b2:
     is_active2 = (st.session_state["active_nav"] == "realtime")
-    btn2_type = "primary" if is_active2 else "secondary"
-    btn2_text = "🛰️  India Disaster Watch\nNDMA & NCS Live Telemetry"
-    if st.button(btn2_text, key="bottom_btn_realtime", type=btn2_type, use_container_width=True):
+    b2_text = "🛰️  India Disaster Live Monitor"
+    if st.button(b2_text, key="bottom_btn_realtime", type="primary" if is_active2 else "secondary", use_container_width=True):
         st.session_state["active_nav"] = "realtime"
         st.rerun()
 
-# Option 3: How to Save Someone
 with col_b3:
     is_active3 = (st.session_state["active_nav"] == "rescue")
-    btn3_type = "primary" if is_active3 else "secondary"
-    btn3_text = "🚑  How to Save Someone\nEmergency Rescue & Triage"
-    if st.button(btn3_text, key="bottom_btn_rescue", type=btn3_type, use_container_width=True):
+    b3_text = "🚑  Life-Saving Rescue Guide"
+    if st.button(b3_text, key="bottom_btn_rescue", type="primary" if is_active3 else "secondary", use_container_width=True):
         st.session_state["active_nav"] = "rescue"
         st.rerun()
 
-# Option 4: Precautions to Take
 with col_b4:
     is_active4 = (st.session_state["active_nav"] == "precautions")
-    btn4_type = "primary" if is_active4 else "secondary"
-    btn4_text = "🛡️  Precautions to Take\nSafety Guide & Go-Bag"
-    if st.button(btn4_text, key="bottom_btn_precautions", type=btn4_type, use_container_width=True):
+    b4_text = "🛡️  Safety & Survival Kit"
+    if st.button(b4_text, key="bottom_btn_precautions", type="primary" if is_active4 else "secondary", use_container_width=True):
         st.session_state["active_nav"] = "precautions"
         st.rerun()
 
-
-# Footer
-st.markdown("<br><hr style='border-color: rgba(255,255,255,0.08);'>", unsafe_allow_html=True)
+# Professional Human-Centered Footer
+st.markdown("<br><hr style='border-color: #334155;'>", unsafe_allow_html=True)
 st.markdown(
-    "<div style='text-align: center; color: #64748b; font-size: 0.85rem;'>"
-    "CSE471 Final Year Project | Pre/Post-Disaster Building-Damage Severity Classifier"
+    "<div style='text-align: center; color: #94a3b8; font-size: 0.84rem;'>"
+    "DisasterVision • National Emergency Response Infrastructure | Final Year Computer Vision Project"
     "</div>",
     unsafe_allow_html=True,
 )
