@@ -54,19 +54,25 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Custom Styling: Clean, Human-Centered, Trustworthy Design System
+# Custom Styling: Humanized, Crisp White & Blue Emergency Operations Design System
 st.markdown("""
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-    /* Global Typography & Reset */
+    /* Global Typography & Light Theme Reset */
     * {
         font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     .mono {
         font-family: 'JetBrains Mono', monospace !important;
+    }
+
+    /* Page Canvas: Soft Off-White Background */
+    .stApp {
+        background-color: #f8fafc !important;
+        color: #0f172a !important;
     }
 
     /* Remove Streamlit default blank header gap */
@@ -86,64 +92,64 @@ st.markdown("""
         max-width: 1400px !important;
     }
 
-    /* Container styling: Soft, natural card surfaces */
+    /* Streamlit Containers: Pure White Card Surfaces with Crisp Borders */
     [data-testid="stVerticalBlockBorderWrapper"] {
-        border-radius: 12px !important;
-        border: 1px solid #334155 !important;
-        background: #1e293b !important;
+        border-radius: 14px !important;
+        border: 1px solid #e2e8f0 !important;
+        background: #ffffff !important;
         padding: 18px !important;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
     }
 
-    /* Top Brand Bar */
+    /* Top Brand Bar: Pure White with Vibrant Royal Blue Accents */
     .brand-bar {
-        background: #0f172a;
-        border: 1px solid #334155;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 14px;
-        padding: 16px 22px;
+        padding: 18px 24px;
         margin-bottom: 18px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: 14px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 16px rgba(37, 99, 235, 0.06);
     }
     .brand-left {
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 16px;
     }
     .brand-emblem {
         width: 48px;
         height: 48px;
-        background: #2563eb;
+        background: linear-gradient(135deg, #1d4ed8, #2563eb);
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.7rem;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     }
     .brand-title {
         font-size: 1.55rem;
         font-weight: 800;
-        color: #f8fafc;
+        color: #0f172a;
         letter-spacing: -0.3px;
         margin-bottom: 2px;
     }
     .brand-subtitle {
-        font-size: 0.85rem;
-        color: #94a3b8;
+        font-size: 0.88rem;
+        color: #475569;
         font-weight: 500;
     }
     .brand-status {
-        background: rgba(16, 185, 129, 0.12);
-        border: 1px solid rgba(16, 185, 129, 0.3);
-        color: #34d399;
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        color: #1d4ed8;
         font-size: 0.82rem;
         font-weight: 600;
-        padding: 7px 16px;
+        padding: 8px 18px;
         border-radius: 30px;
         display: flex;
         align-items: center;
@@ -152,51 +158,48 @@ st.markdown("""
     .status-dot {
         width: 8px;
         height: 8px;
-        background: #10b981;
+        background: #2563eb;
         border-radius: 50%;
         display: inline-block;
-        box-shadow: 0 0 6px #10b981;
+        box-shadow: 0 0 6px #2563eb;
     }
 
-    /* Top Navigation Tabs */
-    .top-nav-container {
-        margin-bottom: 22px;
-    }
-
-    /* Card Surfaces */
+    /* Human Cards (White with Soft Slate Border & Blue Hover Glow) */
     .human-card {
-        background: #1e293b;
-        border: 1px solid #334155;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 12px;
         padding: 20px;
         margin-bottom: 16px;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .human-card:hover {
-        border-color: #475569;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+        border-color: #93c5fd;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+        transform: translateY(-2px);
     }
 
     /* Image Display Docks */
     .dock-wrapper {
-        background: #0f172a;
-        border: 1px solid #334155;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 12px;
         overflow: hidden;
         padding: 12px;
         text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .dock-wrapper:hover {
         transform: translateY(-2px);
-        border-color: #3b82f6;
+        border-color: #2563eb;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
     }
     .dock-header {
-        font-size: 0.8rem;
+        font-size: 0.82rem;
         font-weight: 700;
-        color: #cbd5e1;
+        color: #1e40af;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         margin-bottom: 8px;
@@ -204,43 +207,45 @@ st.markdown("""
 
     /* Verdict Card */
     .verdict-box {
-        background: #1e293b;
+        background: #ffffff;
         border-radius: 12px;
-        padding: 20px;
+        padding: 22px;
         margin-top: 16px;
         margin-bottom: 18px;
-        border-left: 6px solid #3b82f6;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        border: 1px solid #e2e8f0;
+        border-left: 6px solid #2563eb;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     }
 
-    /* Badges */
+    /* Soft Safety Status Badges */
     .badge-pill {
         display: inline-block;
-        padding: 7px 20px;
+        padding: 8px 20px;
         border-radius: 24px;
-        font-size: 1.05rem;
-        font-weight: 800;
-        letter-spacing: 0.4px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
         text-transform: uppercase;
     }
-    .badge-none { background: #059669; color: #ffffff; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); }
-    .badge-minor { background: #d97706; color: #ffffff; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3); }
-    .badge-major { background: #ea580c; color: #ffffff; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3); }
-    .badge-destroyed { background: #dc2626; color: #ffffff; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); }
+    .badge-none { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+    .badge-minor { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .badge-major { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+    .badge-destroyed { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
 
-    /* KPI Metrics */
+    /* KPI Cards */
     .kpi-card {
-        background: #0f172a;
-        border: 1px solid #334155;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 10px;
-        padding: 14px 10px;
+        padding: 14px 12px;
         text-align: center;
         margin-bottom: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
     }
     .kpi-lbl {
         font-size: 0.74rem;
-        color: #94a3b8;
-        font-weight: 600;
+        color: #64748b;
+        font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.4px;
         margin-bottom: 4px;
@@ -248,38 +253,37 @@ st.markdown("""
     .kpi-val {
         font-size: 1.45rem;
         font-weight: 800;
-        color: #f8fafc;
         font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Human Action Directive Banners */
+    /* Action Banners */
     .action-banner {
         border-radius: 10px;
-        padding: 14px 18px;
+        padding: 16px 20px;
         margin-top: 14px;
         display: flex;
-        gap: 12px;
+        gap: 14px;
         align-items: flex-start;
-        font-size: 0.9rem;
-        line-height: 1.55;
+        font-size: 0.92rem;
+        line-height: 1.6;
     }
     .action-safe {
-        background: rgba(16, 185, 129, 0.1);
-        border: 1px solid rgba(16, 185, 129, 0.35);
-        color: #a7f3d0;
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        color: #14532d;
     }
     .action-warning {
-        background: rgba(245, 158, 11, 0.1);
-        border: 1px solid rgba(245, 158, 11, 0.35);
-        color: #fde68a;
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        color: #78350f;
     }
     .action-danger {
-        background: rgba(239, 68, 68, 0.1);
-        border: 1px solid rgba(239, 68, 68, 0.35);
-        color: #fecaca;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #7f1d1d;
     }
 
-    /* Clean Navigation Button Styling */
+    /* Navigation Buttons: White & Blue Theme */
     div.stButton > button {
         border-radius: 10px !important;
         font-weight: 600 !important;
@@ -290,18 +294,24 @@ st.markdown("""
     div.stButton > button[kind="primary"] {
         background: #2563eb !important;
         color: #ffffff !important;
-        border: 1px solid #3b82f6 !important;
-        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+        border: 1px solid #1d4ed8 !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+    }
+    div.stButton > button[kind="primary"]:hover {
+        background: #1d4ed8 !important;
+        color: #ffffff !important;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35) !important;
     }
     div.stButton > button[kind="secondary"] {
-        background: #1e293b !important;
-        color: #cbd5e1 !important;
-        border: 1px solid #334155 !important;
+        background: #ffffff !important;
+        color: #1e293b !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
     }
     div.stButton > button[kind="secondary"]:hover {
-        background: #334155 !important;
-        color: #ffffff !important;
-        border-color: #64748b !important;
+        background: #eff6ff !important;
+        color: #1d4ed8 !important;
+        border-color: #93c5fd !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -330,7 +340,7 @@ model = load_model()
 if "active_nav" not in st.session_state:
     st.session_state["active_nav"] = "classifier"
 
-# Top Brand Header
+# Top Brand Header (White & Blue)
 st.markdown("""
 <div class="brand-bar">
     <div class="brand-left">
@@ -342,14 +352,14 @@ st.markdown("""
     </div>
     <div class="brand-status">
         <span class="status-dot"></span>
-        Operational • NDMA Structural Triage Protocol Active
+        Operational • NDMA Structural Triage Standard Active
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 
 # ==============================================================================
-# TOP NAVIGATION BAR (Accessible, Prominent, Human-Centered)
+# TOP NAVIGATION BAR (Accessible, Prominent, White & Blue Theme)
 # ==============================================================================
 top_n1, top_n2, top_n3, top_n4 = st.columns(4, gap="small")
 
@@ -491,24 +501,24 @@ if st.session_state["active_nav"] == "classifier":
             i1, i2, i3 = st.columns(3)
             with i1:
                 with st.container(border=True):
-                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>1. Before Disaster (Baseline)</div>", unsafe_allow_html=True)
+                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #1e40af; text-transform: uppercase; margin-bottom: 4px;'>1. Before Disaster (Baseline)</div>", unsafe_allow_html=True)
                     st.image(pre_img, use_container_width=True)
                     st.caption("Intact building & roof footprint")
 
             with i2:
                 with st.container(border=True):
-                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>2. After Disaster (Impact)</div>", unsafe_allow_html=True)
+                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #1e40af; text-transform: uppercase; margin-bottom: 4px;'>2. After Disaster (Impact)</div>", unsafe_allow_html=True)
                     st.image(post_img, use_container_width=True)
                     st.caption("Post-event structural state")
 
             with i3:
                 with st.container(border=True):
-                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>3. Damage Heatmap Overlay</div>", unsafe_allow_html=True)
+                    st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #1e40af; text-transform: uppercase; margin-bottom: 4px;'>3. Damage Heatmap Overlay</div>", unsafe_allow_html=True)
                     st.image(blended_heat, use_container_width=True)
                     st.caption("Identified structural disruption zones")
 
-            # Humanized Verdict Card
-            hex_color = CLASS_HEX.get({"none": 0, "minor": 1, "major": 2, "destroyed": 3}.get(pred_label, 0), "#38bdf8")
+            # Humanized Verdict Card (White & Blue Styling)
+            hex_color = CLASS_HEX.get({"none": 0, "minor": 1, "major": 2, "destroyed": 3}.get(pred_label, 0), "#2563eb")
             badge_class = f"badge-{pred_label}"
 
             human_verdicts = {
@@ -523,13 +533,13 @@ if st.session_state["active_nav"] == "classifier":
             <div class="verdict-box" style="border-left-color: {hex_color};">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                     <div>
-                        <div style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Building Safety Evaluation:</div>
+                        <div style="font-size: 0.8rem; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Building Safety Evaluation:</div>
                         <div style="margin-top: 6px;">
                             <span class="badge-pill {badge_class}">{verdict_text}</span>
                         </div>
                     </div>
                     <div style="text-align: right;">
-                        <div style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Assessment Confidence:</div>
+                        <div style="font-size: 0.8rem; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Assessment Confidence:</div>
                         <div style="font-size: 1.8rem; font-weight: 800; color: {hex_color}; font-family: 'JetBrains Mono', monospace; margin-top: 2px;">
                             {confidence * 100:.1f}%
                         </div>
@@ -571,7 +581,7 @@ if st.session_state["active_nav"] == "classifier":
                 """, unsafe_allow_html=True)
             else:
                 st.markdown("""
-                <div class="action-banner action-danger" style="background: rgba(220, 38, 38, 0.15); border-color: #ef4444;">
+                <div class="action-banner action-danger" style="background: #fef2f2; border-color: #f87171;">
                     <span style="font-size: 1.4rem;">💥</span>
                     <div>
                         <strong>Critical Emergency: Complete Structural Failure / Collapse:</strong><br>
@@ -580,7 +590,7 @@ if st.session_state["active_nav"] == "classifier":
                 </div>
                 """, unsafe_allow_html=True)
 
-            # Severity Probabilities
+            # Severity Probabilities (White & Blue Cards)
             st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
             st.markdown("##### 📊 Damage Severity Assessment Breakdown:")
             p_cols = st.columns(4)
@@ -631,7 +641,7 @@ if st.session_state["active_nav"] == "classifier":
                 now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
                 loc_seed = sample_pick if mode == "Select a Real-World Disaster Case Study" else "Custom Upload"
                 dossier_id = generate_dossier_id(loc_seed, now_str)
-                st.markdown(f"<div style='padding-top: 28px;'><span class='badge-pill' style='background: rgba(59, 130, 246, 0.15); color: #60a5fa; font-family: monospace; font-size: 0.85rem;'>DOSSIER #{dossier_id}</span></div>", unsafe_allow_html=True)
+                st.markdown(f"<div style='padding-top: 28px;'><span class='badge-pill' style='background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-family: monospace; font-size: 0.85rem;'>DOSSIER #{dossier_id}</span></div>", unsafe_allow_html=True)
 
             loc_label = sample_pick if mode == "Select a Real-World Disaster Case Study" else "Custom Orthorectified AOI"
             prob_dict = {
@@ -719,7 +729,7 @@ elif st.session_state["active_nav"] == "realtime":
     # Status Bar & Refresh
     s_col1, s_col2 = st.columns([3, 1])
     with s_col1:
-        st.markdown(f"<div style='color: #38bdf8; font-size: 0.9rem; font-weight: 600; padding: 6px 0;'>{source_label} | Tracking {len(events)} Indian Disaster Zones</div>", unsafe_allow_html=True)
+        st.markdown(f"<div style='color: #1d4ed8; font-size: 0.92rem; font-weight: 600; padding: 6px 0;'>{source_label} | Tracking {len(events)} Indian Disaster Zones</div>", unsafe_allow_html=True)
     with s_col2:
         if st.button("🔄 Refresh Live Feeds", use_container_width=True):
             st.rerun()
@@ -739,30 +749,30 @@ elif st.session_state["active_nav"] == "realtime":
             )
             ev = events[chosen_idx]
 
-            alert_color = "#ef4444" if ev["alert_level"] == "RED" else "#f59e0b" if ev["alert_level"] == "ORANGE" else "#10b981"
+            alert_color = "#dc2626" if ev["alert_level"] == "RED" else "#d97706" if ev["alert_level"] == "ORANGE" else "#059669"
 
-            state_badge = f"<div style='font-size: 0.82rem; color: #cbd5e1; margin-bottom: 4px;'><strong>State / Territory:</strong> {ev['state']}</div>" if ev.get("state") else ""
-            ndrf_badge = f"<div style='font-size: 0.82rem; color: #fbbf24; margin-top: 4px; margin-bottom: 4px;'><strong>🇮🇳 Assigned Unit:</strong> {ev['ndrf_battalion']}</div>" if ev.get("ndrf_battalion") else ""
+            state_badge = f"<div style='font-size: 0.84rem; color: #334155; margin-bottom: 4px;'><strong>State / Territory:</strong> {ev['state']}</div>" if ev.get("state") else ""
+            ndrf_badge = f"<div style='font-size: 0.84rem; color: #1d4ed8; margin-top: 4px; margin-bottom: 4px;'><strong>🇮🇳 Assigned Unit:</strong> {ev['ndrf_battalion']}</div>" if ev.get("ndrf_battalion") else ""
 
             st.markdown(f"""
-            <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 14px; margin-top: 10px;">
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <span style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Category:</span>
-                    <span style="background: {alert_color}; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">{ev['alert_level']} ALERT</span>
+                    <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Category:</span>
+                    <span style="background: {alert_color}; color: white; padding: 3px 12px; border-radius: 14px; font-size: 0.75rem; font-weight: 700;">{ev['alert_level']} ALERT</span>
                 </div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: #f8fafc; margin-bottom: 6px;">{ev['category']}</div>
-                <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 4px;"><strong>Intensity:</strong> {ev['magnitude']}</div>
-                <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 4px;"><strong>Region:</strong> {ev['place']}</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">{ev['category']}</div>
+                <div style="font-size: 0.84rem; color: #334155; margin-bottom: 4px;"><strong>Intensity:</strong> {ev['magnitude']}</div>
+                <div style="font-size: 0.84rem; color: #334155; margin-bottom: 4px;"><strong>Region:</strong> {ev['place']}</div>
                 {state_badge}
                 {ndrf_badge}
-                <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 4px;"><strong>Coordinates:</strong> {ev['coordinates'][0]}°N, {ev['coordinates'][1]}°E</div>
-                <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 4px;"><strong>Recorded:</strong> {ev['time']}</div>
-                <div style="font-size: 0.82rem; color: #38bdf8; margin-top: 6px;"><strong>Satellite AOI:</strong> {ev['satellite_aoi']}</div>
-                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; border-top: 1px solid #334155; padding-top: 6px;">
+                <div style="font-size: 0.84rem; color: #334155; margin-bottom: 4px;"><strong>Coordinates:</strong> {ev['coordinates'][0]}°N, {ev['coordinates'][1]}°E</div>
+                <div style="font-size: 0.84rem; color: #334155; margin-bottom: 4px;"><strong>Recorded:</strong> {ev['time']}</div>
+                <div style="font-size: 0.84rem; color: #2563eb; margin-top: 6px;"><strong>Satellite AOI:</strong> {ev['satellite_aoi']}</div>
+                <div style="font-size: 0.8rem; color: #64748b; margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 6px;">
                     {ev['description']}
                 </div>
             </div>
-            <a href='https://www.openstreetmap.org/?mlat={ev['coordinates'][0]}&mlon={ev['coordinates'][1]}#map=16/{ev['coordinates'][0]}/{ev['coordinates'][1]}' target='_blank' style='display:block; text-align:center; margin-top:8px; font-size:0.8rem; color:#38bdf8; text-decoration:none;'>🗺️ View Epicenter on OpenStreetMap ↗</a>
+            <a href='https://www.openstreetmap.org/?mlat={ev['coordinates'][0]}&mlon={ev['coordinates'][1]}#map=16/{ev['coordinates'][0]}/{ev['coordinates'][1]}' target='_blank' style='display:block; text-align:center; margin-top:10px; font-size:0.82rem; color:#2563eb; font-weight:600; text-decoration:none;'>🗺️ View Epicenter on OpenStreetMap ↗</a>
             """, unsafe_allow_html=True)
 
             st.markdown("---")
@@ -836,20 +846,21 @@ elif st.session_state["active_nav"] == "realtime":
         pred_label, confidence, probs, heatmap = model.predict(pre_img, post_img)
         blended_heat = blend_heatmap_on_image(post_img, heatmap, alpha=rt_opacity)
 
-        # Live Satellite Telemetry Dock
+        # Live Satellite Telemetry Dock (White & Blue)
         is_live = meta.get("is_live_tile", False)
         live_badge = "🟢 LIVE ORBITAL PASS" if is_live else "🛰️ VERIFIED HIGH-RES ARCHIVE"
-        badge_bg = "rgba(16, 185, 129, 0.15)" if is_live else "rgba(56, 189, 248, 0.15)"
-        badge_color = "#34d399" if is_live else "#38bdf8"
+        badge_bg = "#ecfdf5" if is_live else "#eff6ff"
+        badge_color = "#047857" if is_live else "#1d4ed8"
+        badge_border = "#a7f3d0" if is_live else "#bfdbfe"
 
         st.markdown(f"""
-        <div style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 10px 16px; margin-bottom: 12px;">
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 18px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="background: {badge_bg}; color: {badge_color}; border: 1px solid {badge_color}; border-radius: 14px; padding: 2px 10px; font-size: 0.72rem; font-weight: 700;">{live_badge}</span>
-                    <span style="font-size: 0.82rem; color: #f8fafc; font-weight: 600;">{meta.get('source', 'Orbital Satellite Pass')}</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="background: {badge_bg}; color: {badge_color}; border: 1px solid {badge_border}; border-radius: 14px; padding: 3px 12px; font-size: 0.74rem; font-weight: 700;">{live_badge}</span>
+                    <span style="font-size: 0.85rem; color: #0f172a; font-weight: 700;">{meta.get('source', 'Orbital Satellite Pass')}</span>
                 </div>
-                <div style="font-size: 0.78rem; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">
+                <div style="font-size: 0.8rem; color: #64748b; font-family: 'JetBrains Mono', monospace;">
                     📍 {meta.get('coordinates', f"{ev['coordinates'][0]}°N, {ev['coordinates'][1]}°E")} | GSD: {meta.get('gsd', '0.3m/px')}
                 </div>
             </div>
@@ -860,24 +871,24 @@ elif st.session_state["active_nav"] == "realtime":
         si1, si2, si3 = st.columns(3)
         with si1:
             with st.container(border=True):
-                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>1. Baseline (Before Event)</div>", unsafe_allow_html=True)
+                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #1e40af; text-transform: uppercase; margin-bottom: 4px;'>1. Baseline (Before Event)</div>", unsafe_allow_html=True)
                 st.image(pre_img, use_container_width=True)
                 st.caption(f"Baseline capture | {meta.get('tile_info', 'Sentinel-2 AOI')}")
 
         with si2:
             with st.container(border=True):
-                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>2. Impact (After Event)</div>", unsafe_allow_html=True)
+                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #1e40af; text-transform: uppercase; margin-bottom: 4px;'>2. Impact (After Event)</div>", unsafe_allow_html=True)
                 st.image(post_img, use_container_width=True)
                 st.caption(f"Post-event satellite pass | {ev['magnitude']}")
 
         with si3:
             with st.container(border=True):
-                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; margin-bottom: 4px;'>3. Impact Heatmap</div>", unsafe_allow_html=True)
+                st.markdown("<div style='font-size: 0.82rem; font-weight: 700; color: #1e40af; text-transform: uppercase; margin-bottom: 4px;'>3. Impact Heatmap</div>", unsafe_allow_html=True)
                 st.image(blended_heat, use_container_width=True)
                 st.caption(f"Structural disruption focus | {confidence*100:.1f}%")
 
-        # Severity Summary Card
-        hex_color = CLASS_HEX.get({"none": 0, "minor": 1, "major": 2, "destroyed": 3}.get(pred_label, 0), "#38bdf8")
+        # Severity Summary Card (White & Blue)
+        hex_color = CLASS_HEX.get({"none": 0, "minor": 1, "major": 2, "destroyed": 3}.get(pred_label, 0), "#2563eb")
         badge_class = f"badge-{pred_label}"
 
         human_verdicts = {
@@ -892,13 +903,13 @@ elif st.session_state["active_nav"] == "realtime":
         <div class="verdict-box" style="border-left-color: {hex_color};">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                 <div>
-                    <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Structural Safety Verdict:</span>
+                    <span style="font-size: 0.8rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Structural Safety Verdict:</span>
                     <div style="margin-top: 6px;">
                         <span class="badge-pill {badge_class}">{rt_verdict}</span>
                     </div>
                 </div>
                 <div style="text-align: right;">
-                    <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Confidence:</span>
+                    <span style="font-size: 0.8rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Confidence:</span>
                     <div style="font-size: 1.8rem; font-weight: 800; color: {hex_color}; font-family: 'JetBrains Mono', monospace; margin-top: 2px;">
                         {confidence * 100:.1f}%
                     </div>
@@ -907,7 +918,7 @@ elif st.session_state["active_nav"] == "realtime":
         </div>
         """, unsafe_allow_html=True)
 
-        # 4 Probabilities
+        # 4 Probabilities (White & Blue Cards)
         st.markdown("##### 📊 Damage Severity Assessment Breakdown:")
         p_cols = st.columns(4)
         labels = ["Intact (Safe)", "Minor Damage", "Major Damage", "Total Collapse"]
@@ -931,11 +942,11 @@ elif st.session_state["active_nav"] == "realtime":
         else:
             st.success(rt_directive)
 
-        # Pipeline Architecture Card
+        # Pipeline Architecture Card (White & Blue)
         st.markdown("""
-        <div style="background: rgba(56, 189, 248, 0.05); border: 1px dashed rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 12px 16px; margin-top: 14px;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">📡 National Disaster Telemetry Pipeline:</span>
-            <div style="color: #94a3b8; font-size: 0.82rem; margin-top: 4px; line-height: 1.5;">
+        <div style="background: #eff6ff; border: 1px dashed #93c5fd; border-radius: 12px; padding: 14px 18px; margin-top: 14px;">
+            <span style="color: #1e40af; font-size: 0.82rem; font-weight: 700; text-transform: uppercase;">📡 National Disaster Telemetry Pipeline:</span>
+            <div style="color: #334155; font-size: 0.84rem; margin-top: 4px; line-height: 1.6;">
                 <code>NDMA Sachet / IMD Early Warning</code> &rarr; <code>ISRO Cartosat / Sentinel-2 Tasking</code> &rarr; <code>Sub-Pixel Coregistration</code> &rarr; <code>Dual-Branch Siamese CNN</code> &rarr; <code>NDRF Battalion Deployment</code>
             </div>
         </div>
@@ -965,7 +976,7 @@ elif st.session_state["active_nav"] == "realtime":
         with r_col3:
             rt_now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
             rt_dossier_id = generate_dossier_id(ev.get("title", "Disaster AOI"), rt_now_str)
-            st.markdown(f"<div style='padding-top: 28px;'><span class='badge-pill' style='background: rgba(59, 130, 246, 0.15); color: #60a5fa; font-family: monospace; font-size: 0.85rem;'>DOSSIER #{rt_dossier_id}</span></div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='padding-top: 28px;'><span class='badge-pill' style='background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-family: monospace; font-size: 0.85rem;'>DOSSIER #{rt_dossier_id}</span></div>", unsafe_allow_html=True)
 
         rt_prob_dict = {
             "None (No Damage)": float(probs[0]),
@@ -1038,8 +1049,8 @@ elif st.session_state["active_nav"] == "rescue":
         st.markdown("""
         <div class="human-card" style="height: 100%;">
             <div style="font-size: 1.8rem; margin-bottom: 6px;">🛡️</div>
-            <h5 style="color: #38bdf8; margin-top: 0;">1. Ensure Safety First</h5>
-            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            <h5 style="color: #1e40af; margin-top: 0;">1. Ensure Safety First</h5>
+            <p style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
             Never enter an unstable building alone. Watch out for arcing electrical lines, leaking gas, and hanging concrete slabs.
             </p>
         </div>
@@ -1048,8 +1059,8 @@ elif st.session_state["active_nav"] == "rescue":
         st.markdown("""
         <div class="human-card" style="height: 100%;">
             <div style="font-size: 1.8rem; margin-bottom: 6px;">👂</div>
-            <h5 style="color: #38bdf8; margin-top: 0;">2. Acoustic Search</h5>
-            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            <h5 style="color: #1e40af; margin-top: 0;">2. Acoustic Search</h5>
+            <p style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
             Call out loudly and listen in complete silence. Instruct trapped victims to tap three times on metallic pipes or solid concrete.
             </p>
         </div>
@@ -1058,8 +1069,8 @@ elif st.session_state["active_nav"] == "rescue":
         st.markdown("""
         <div class="human-card" style="height: 100%;">
             <div style="font-size: 1.8rem; margin-bottom: 6px;">🩹</div>
-            <h5 style="color: #38bdf8; margin-top: 0;">3. Stop Bleeding</h5>
-            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            <h5 style="color: #1e40af; margin-top: 0;">3. Stop Bleeding</h5>
+            <p style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
             Apply firm direct pressure with clean dressing. For severe limb arterial bleeding, apply a tourniquet 2-3 inches above the wound.
             </p>
         </div>
@@ -1068,8 +1079,8 @@ elif st.session_state["active_nav"] == "rescue":
         st.markdown("""
         <div class="human-card" style="height: 100%;">
             <div style="font-size: 1.8rem; margin-bottom: 6px;">🌡️</div>
-            <h5 style="color: #38bdf8; margin-top: 0;">4. Prevent Shock</h5>
-            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            <h5 style="color: #1e40af; margin-top: 0;">4. Prevent Shock</h5>
+            <p style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
             Hypothermia and shock set in quickly. Wrap the victim in an emergency thermal blanket, reassure them, and elevate feet 12 inches.
             </p>
         </div>
@@ -1079,9 +1090,9 @@ elif st.session_state["active_nav"] == "rescue":
 
     # Critical Medical Warning on Crush Syndrome
     st.markdown("""
-    <div class="human-card" style="border-left: 6px solid #ef4444; background: rgba(239, 68, 68, 0.08);">
-        <h5 style="color: #ef4444; margin-top: 0;">⚠️ Mandatory Medical Warning: Crush Syndrome</h5>
-        <p style="color: #e2e8f0; font-size: 0.92rem; line-height: 1.6; margin-bottom: 0;">
+    <div class="human-card" style="border-left: 6px solid #dc2626; background: #fef2f2; border-color: #fecaca;">
+        <h5 style="color: #b91c1c; margin-top: 0;">⚠️ Mandatory Medical Warning: Crush Syndrome</h5>
+        <p style="color: #7f1d1d; font-size: 0.92rem; line-height: 1.6; margin-bottom: 0;">
         If a survivor's limb has been trapped beneath a heavy concrete slab for <strong>more than 2 hours</strong>, 
         <strong>DO NOT suddenly lift the weight off</strong> without medical personnel prepared with IV hydration! 
         Sudden release flushes toxic potassium and myoglobin accumulated in the crushed muscle directly into circulation, causing 
@@ -1095,38 +1106,38 @@ elif st.session_state["active_nav"] == "rescue":
     t1, t2, t3, t4 = st.columns(4)
     with t1:
         st.markdown("""
-        <div style="background: rgba(239, 68, 68, 0.15); border-left: 4px solid #ef4444; padding: 14px; border-radius: 8px;">
-            <strong style="color: #ef4444;">🔴 Immediate (Priority 1)</strong><br>
-            <span style="font-size: 0.85rem; color: #cbd5e1;">Airway obstruction, tension pneumothorax, or massive bleeding. Treat first!</span>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #dc2626; padding: 14px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+            <strong style="color: #b91c1c;">🔴 Immediate (Priority 1)</strong><br>
+            <span style="font-size: 0.85rem; color: #475569;">Airway obstruction, tension pneumothorax, or massive bleeding. Treat first!</span>
         </div>
         """, unsafe_allow_html=True)
     with t2:
         st.markdown("""
-        <div style="background: rgba(245, 158, 11, 0.15); border-left: 4px solid #f59e0b; padding: 14px; border-radius: 8px;">
-            <strong style="color: #f59e0b;">🟡 Delayed (Priority 2)</strong><br>
-            <span style="font-size: 0.85rem; color: #cbd5e1;">Fractures, deep lacerations, stable vitals. Needs medical care after Priority 1.</span>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #d97706; padding: 14px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+            <strong style="color: #b45309;">🟡 Delayed (Priority 2)</strong><br>
+            <span style="font-size: 0.85rem; color: #475569;">Fractures, deep lacerations, stable vitals. Needs medical care after Priority 1.</span>
         </div>
         """, unsafe_allow_html=True)
     with t3:
         st.markdown("""
-        <div style="background: rgba(16, 185, 129, 0.15); border-left: 4px solid #10b981; padding: 14px; border-radius: 8px;">
-            <strong style="color: #10b981;">🟢 Minor (Walking Wounded)</strong><br>
-            <span style="font-size: 0.85rem; color: #cbd5e1;">Minor cuts, abrasions, sprains. Able to walk and assist with minor tasks.</span>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #059669; padding: 14px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+            <strong style="color: #047857;">🟢 Minor (Walking Wounded)</strong><br>
+            <span style="font-size: 0.85rem; color: #475569;">Minor cuts, abrasions, sprains. Able to walk and assist with minor tasks.</span>
         </div>
         """, unsafe_allow_html=True)
     with t4:
         st.markdown("""
-        <div style="background: rgba(100, 116, 139, 0.15); border-left: 4px solid #64748b; padding: 14px; border-radius: 8px;">
-            <strong style="color: #94a3b8;">⚫ Expectant / Deceased</strong><br>
-            <span style="font-size: 0.85rem; color: #cbd5e1;">No pulse or respiration after opening airway. Direct resources to viable victims.</span>
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #64748b; padding: 14px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+            <strong style="color: #475569;">⚫ Expectant / Deceased</strong><br>
+            <span style="font-size: 0.85rem; color: #475569;">No pulse or respiration after opening airway. Direct resources to viable victims.</span>
         </div>
         """, unsafe_allow_html=True)
 
-    # Official Indian National Emergency Helplines
+    # Official Indian National Emergency Helplines (White & Blue)
     st.markdown("""
-    <div style="background: rgba(245, 158, 11, 0.08); border: 1px dashed rgba(245, 158, 11, 0.4); border-radius: 12px; padding: 16px 20px; margin-top: 22px;">
-        <span style="color: #fbbf24; font-size: 0.88rem; font-weight: 700; text-transform: uppercase;">🇮🇳 Official National Emergency Helplines (India):</span>
-        <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; font-size: 0.86rem; color: #cbd5e1;">
+    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 16px 22px; margin-top: 22px;">
+        <span style="color: #1e40af; font-size: 0.88rem; font-weight: 700; text-transform: uppercase;">🇮🇳 Official National Emergency Helplines (India):</span>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; font-size: 0.88rem; color: #1e293b;">
             <span>🚨 <strong>112</strong>: Pan-India Emergency All-in-One</span>
             <span>🏛️ <strong>1078</strong>: NDMA National Disaster Helpline</span>
             <span>🚑 <strong>108</strong>: Emergency Ambulance Service</span>
@@ -1154,8 +1165,8 @@ elif st.session_state["active_nav"] == "precautions":
     if stage == "Before Disaster (Preparation)":
         st.markdown("""
         <div class="human-card">
-            <h5 style="color: #38bdf8;">📦 Essential Precautions Before Disaster Strikes:</h5>
-            <ul style="color: #cbd5e1; line-height: 1.9; font-size: 0.92rem;">
+            <h5 style="color: #1e40af;">📦 Essential Precautions Before Disaster Strikes:</h5>
+            <ul style="color: #334155; line-height: 1.9; font-size: 0.92rem;">
                 <li><strong>Anchor Heavy Furniture:</strong> Secure tall bookcases, water heaters, and heavy appliances to wall studs to prevent them from toppling during seismic tremors.</li>
                 <li><strong>Assemble 72-Hour Survival Go-Bag:</strong> Pack 4 liters of potable water per person per day, non-perishable canned food, medical supplies, and copies of important documents.</li>
                 <li><strong>Establish Family Evacuation Plan:</strong> Designate two independent meeting spots and identify an out-of-state emergency family contact.</li>
@@ -1166,8 +1177,8 @@ elif st.session_state["active_nav"] == "precautions":
     elif stage == "During Disaster (Survival)":
         st.markdown("""
         <div class="human-card">
-            <h5 style="color: #38bdf8;">🚨 Critical Survival Actions During Disaster:</h5>
-            <ul style="color: #cbd5e1; line-height: 1.9; font-size: 0.92rem;">
+            <h5 style="color: #1e40af;">🚨 Critical Survival Actions During Disaster:</h5>
+            <ul style="color: #334155; line-height: 1.9; font-size: 0.92rem;">
                 <li><strong>Earthquake:</strong> <strong>Drop, Cover, and Hold On!</strong> Drop to your hands and knees under a sturdy desk. Never run outside or stand in doorframes.</li>
                 <li><strong>Flood:</strong> <strong>Turn Around, Don't Drown!</strong> Just 12 inches of rushing water can sweep away passenger cars. Never walk or drive through flooded roadways.</li>
                 <li><strong>Cyclone / Hurricane:</strong> Shelter in an interior windowless room (hallway, closet, or bathroom) on the lowest floor. Stay away from windows.</li>
@@ -1178,8 +1189,8 @@ elif st.session_state["active_nav"] == "precautions":
     else:
         st.markdown("""
         <div class="human-card">
-            <h5 style="color: #38bdf8;">⚠️ Safety Precautions in the Disaster Aftermath:</h5>
-            <ul style="color: #cbd5e1; line-height: 1.9; font-size: 0.92rem;">
+            <h5 style="color: #1e40af;">⚠️ Safety Precautions in the Disaster Aftermath:</h5>
+            <ul style="color: #334155; line-height: 1.9; font-size: 0.92rem;">
                 <li><strong>Never Flip Electrical Switches if Gas is Smelled:</strong> Sparks can ignite pocketed gas. Open windows and turn off the main gas valve from the outside immediately.</li>
                 <li><strong>Maintain 35-Foot Distance from Downed Lines:</strong> Treat all fallen electrical lines as energized. Never touch standing water near downed poles.</li>
                 <li><strong>Inspect for X-Cracks:</strong> Do not enter masonry structures displaying diagonal 45-degree shear cracks until certified safe by a civil engineer.</li>
@@ -1202,15 +1213,15 @@ elif st.session_state["active_nav"] == "precautions":
                 checked_count += 1
 
     pct = int((checked_count / total_items) * 100)
-    ready_color = "#10b981" if pct >= 80 else "#f59e0b" if pct >= 40 else "#ef4444"
+    ready_color = "#059669" if pct >= 80 else "#d97706" if pct >= 40 else "#dc2626"
     st.markdown(f"<div style='font-size: 1rem; font-weight: 700; color: {ready_color}; margin-top: 10px;'>Go-Bag Preparedness Score: {pct}% ({checked_count}/{total_items} items equipped)</div>", unsafe_allow_html=True)
     st.progress(checked_count / total_items)
 
 
 # ==============================================================================
-# BOTTOM DOCK: QUICK SWITCHER FOR EASY ACCESS AT THE BOTTOM OF THE PAGE
+# BOTTOM DOCK: QUICK MODULE SELECTOR (White & Blue Theme)
 # ==============================================================================
-st.markdown("<div style='margin-top: 36px; margin-bottom: 14px; text-align: center; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #94a3b8;'>🧭 QUICK MODULE SELECTOR:</div>", unsafe_allow_html=True)
+st.markdown("<div style='margin-top: 36px; margin-bottom: 14px; text-align: center; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b;'>🧭 QUICK MODULE SELECTOR:</div>", unsafe_allow_html=True)
 
 col_b1, col_b2, col_b3, col_b4 = st.columns(4, gap="small")
 
@@ -1242,10 +1253,10 @@ with col_b4:
         st.session_state["active_nav"] = "precautions"
         st.rerun()
 
-# Professional Human-Centered Footer
-st.markdown("<br><hr style='border-color: #334155;'>", unsafe_allow_html=True)
+# Professional Human-Centered Footer (White & Blue)
+st.markdown("<br><hr style='border-color: #e2e8f0;'>", unsafe_allow_html=True)
 st.markdown(
-    "<div style='text-align: center; color: #94a3b8; font-size: 0.84rem;'>"
+    "<div style='text-align: center; color: #64748b; font-size: 0.86rem;'>"
     "DisasterVision • National Emergency Response Infrastructure | Final Year Computer Vision Project"
     "</div>",
     unsafe_allow_html=True,
